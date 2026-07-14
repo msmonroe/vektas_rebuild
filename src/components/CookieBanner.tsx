@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react'
 
-const COOKIE_KEY = 'vektas-cookie-consent'
+const CONSENT_STORAGE_KEY = 'vektas-cookie-consent'
 
 export function CookieBanner() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    const stored = localStorage.getItem(COOKIE_KEY)
+    const stored = localStorage.getItem(CONSENT_STORAGE_KEY)
     if (!stored) {
       setVisible(true)
     }
   }, [])
 
   const accept = () => {
-    localStorage.setItem(COOKIE_KEY, 'accepted')
+    localStorage.setItem(CONSENT_STORAGE_KEY, 'accepted')
     setVisible(false)
   }
 

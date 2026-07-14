@@ -44,7 +44,11 @@ export function ServicesPage() {
               <Icon className="h-8 w-8 text-blue-600" aria-hidden="true" />
               <h2 className="mt-4 text-lg font-semibold text-slate-900 dark:text-white">{service.title}</h2>
               <p className="mt-2 flex-1 text-sm text-slate-600 dark:text-slate-300">{service.description}</p>
-              <button type="button" className="mt-4 w-fit rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-800 transition hover:border-blue-600 hover:text-blue-600 dark:border-slate-700 dark:text-slate-200">
+              <button
+                type="button"
+                aria-label={`Learn more about ${service.title}`}
+                className="mt-4 w-fit rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-800 transition hover:border-blue-600 hover:text-blue-600 dark:border-slate-700 dark:text-slate-200"
+              >
                 Learn More
               </button>
             </ScrollReveal>
