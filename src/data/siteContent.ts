@@ -2,7 +2,7 @@ export const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'Services', to: '/services' },
   { label: 'Solutions', to: '/solutions' },
-  { label: 'Pricing', to: '/pricing' },
+  { label: 'Engagements', to: '/pricing' },
   { label: 'Blog', to: '/blog' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
@@ -10,99 +10,86 @@ export const navLinks = [
 
 export const faqs = [
   {
-    question: 'How long does a private AI deployment take?',
+    question: 'How does a typical Vektas engagement begin?',
     answer:
-      'Most engagements start delivering value in 2–6 weeks depending on infrastructure readiness and integration scope.',
+      'Most engagements begin with a focused assessment or discovery phase to define the business problem, technical constraints, measurable outcomes, and a practical path to production.',
   },
   {
-    question: 'Can Vektas work with existing Microsoft and .NET systems?',
+    question: 'Can Vektas work with existing Microsoft and .NET environments?',
     answer:
-      'Yes. We specialize in integrating AI with Microsoft ecosystems, .NET services, SQL Server, and REST-based enterprise APIs.',
+      'Yes. Vektas has deep experience with Microsoft ecosystems, .NET applications, SQL Server, identity platforms, REST APIs, cloud services, and legacy enterprise systems.',
   },
   {
-    question: 'Do you support regulated industries?',
+    question: 'Do you support regulated or security-sensitive environments?',
     answer:
-      'Yes. We design private AI systems to align with privacy, governance, and audit requirements for regulated environments.',
-  },
-]
-
-export const testimonials = [
-  {
-    quote:
-      'Vektas helped us launch a secure internal AI assistant in under a month while keeping sensitive client data on-prem.',
-    author: 'Director of Technology, Legal Services Firm',
+      'Yes. Solutions can be designed around privacy, governance, auditability, data residency, access control, and human-review requirements appropriate to the organization and use case.',
   },
   {
-    quote:
-      'Their automation workflows eliminated hours of repetitive reporting every week and improved data quality across teams.',
-    author: 'Operations Lead, Manufacturing Company',
-  },
-  {
-    quote:
-      'The team translated complex enterprise integration requirements into practical AI solutions our staff adopted quickly.',
-    author: 'CIO, Regional Healthcare Group',
+    question: 'Does every solution require an LLM or generative AI?',
+    answer:
+      'No. Vektas uses AI where reasoning and adaptation add value, and deterministic software, APIs, rules, and conventional automation where reliability, speed, cost, and auditability matter more.',
   },
 ]
 
 export const serviceCards = [
   {
-    title: 'Private AI Consulting',
-    description: 'Strategy and architecture for secure, high-impact AI adoption in your organization.',
+    title: 'AI Systems Engineering',
+    description: 'Design and build production-ready AI systems aligned with enterprise architecture, security, governance, and measurable business outcomes.',
   },
   {
-    title: 'Local LLM Deployment',
-    description: 'Deploy and optimize Ollama, Llama, and open-source models on your own infrastructure.',
+    title: 'Intelligent Workflow Automation',
+    description: 'Modernize complex workflows by combining AI-assisted reasoning with deterministic automation, orchestration, APIs, and human review.',
   },
   {
-    title: 'Retrieval-Augmented Generation (RAG)',
-    description: 'Ground model outputs in your internal documents for accurate, context-aware responses.',
-  },
-  {
-    title: 'Workflow Automation',
-    description: 'Automate repetitive business processes with AI-assisted decision flows and orchestration.',
+    title: 'Enterprise Knowledge Systems',
+    description: 'Build private RAG and knowledge solutions that connect employees to trusted internal information with appropriate controls and citations.',
   },
   {
     title: 'Document Intelligence',
-    description: 'Extract, classify, and summarize information from complex documents securely.',
+    description: 'Extract, classify, validate, summarize, and route information from complex documents while preserving review and audit paths.',
   },
   {
-    title: 'Custom AI Development',
-    description: 'Build tailored AI applications aligned with your workflows, governance, and data boundaries.',
+    title: 'Systems Integration',
+    description: 'Connect disconnected applications, data sources, identity platforms, and APIs so information moves reliably across the organization.',
   },
   {
-    title: 'Enterprise Integration',
-    description: 'Connect AI into Microsoft, .NET, SQL Server, and existing enterprise APIs and platforms.',
+    title: 'Custom Software Development',
+    description: 'Build internal applications, portals, APIs, and workflow tools around business processes that off-the-shelf products do not fit well.',
   },
   {
-    title: 'AI Training',
-    description: 'Enable teams with practical training to use AI safely, effectively, and responsibly.',
+    title: 'Legacy Modernization',
+    description: 'Extend, integrate, or incrementally modernize business-critical legacy systems without forcing unnecessary rip-and-replace programs.',
+  },
+  {
+    title: 'AI Production Readiness',
+    description: 'Evaluate architecture, data, security, governance, observability, cost, and operational readiness before AI systems move into production.',
   },
 ]
 
 export const industries = [
   {
-    name: 'Healthcare',
-    summary: 'Improve clinical and administrative workflows while protecting patient confidentiality.',
+    name: 'Healthcare & Life Sciences',
+    summary: 'Modernize administrative, knowledge, document, and operational workflows while respecting sensitive-data and governance requirements.',
   },
   {
-    name: 'Manufacturing',
-    summary: 'Automate quality checks, reporting, and planning with secure AI on your own systems.',
+    name: 'Manufacturing & Industrial',
+    summary: 'Connect operational systems, automate reporting and knowledge workflows, and improve access to technical information across teams.',
   },
   {
-    name: 'Legal',
-    summary: 'Accelerate document review and research while keeping privileged data fully private.',
+    name: 'Legal & Professional Services',
+    summary: 'Accelerate document-intensive work, internal knowledge access, matter operations, and service delivery without losing human oversight.',
   },
   {
-    name: 'Financial Services',
-    summary: 'Deliver faster analysis and operations support without exposing sensitive financial data.',
+    name: 'Financial & Business Services',
+    summary: 'Improve analysis, operations, reporting, and internal knowledge workflows with systems designed for control and auditability.',
   },
   {
-    name: 'Government',
-    summary: 'Enable mission-critical AI capabilities with strict governance and infrastructure control.',
+    name: 'Public Sector & Regulated Organizations',
+    summary: 'Design practical automation and AI systems around security, governance, data control, and existing technology constraints.',
   },
   {
-    name: 'Professional Services',
-    summary: 'Increase team productivity with secure knowledge assistants and proposal automation.',
+    name: 'Mid-Market & Enterprise Operations',
+    summary: 'Reduce friction across departments by integrating systems, modernizing workflows, and building software around complex operational needs.',
   },
 ]
 
@@ -112,5 +99,5 @@ export const blogPosts = [
   'Reducing AI Costs',
   'What is RAG?',
   'Building AI Safely',
-  'Private AI for Small Businesses',
+  'From AI Experiment to Production System',
 ]

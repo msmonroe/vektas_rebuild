@@ -11,33 +11,39 @@ import { SolutionsPage } from './pages/SolutionsPage'
 
 const routeMeta: Record<string, { title: string; description: string }> = {
   '/': {
-    title: 'Vektas | Private AI. Real Results.',
+    title: 'Vektas | AI, Automation & Software Engineering',
     description:
-      'Vektas helps businesses deploy private AI, automation, and enterprise integrations with secure infrastructure control.',
+      'Vektas helps mid-market and enterprise organizations modernize workflows, integrate systems, and deploy production-ready AI and custom software.',
   },
   '/services': {
     title: 'Services | Vektas',
-    description: 'Private AI consulting, local LLM deployment, RAG, workflow automation, and enterprise integration services.',
+    description:
+      'AI systems engineering, workflow modernization, systems integration, custom software, enterprise knowledge systems, and production readiness services.',
   },
   '/solutions': {
     title: 'Solutions | Vektas',
-    description: 'Industry-focused private AI solutions for healthcare, manufacturing, legal, financial, government, and services.',
+    description:
+      'Practical AI, automation, integration, document intelligence, and knowledge systems for complex mid-market and enterprise operations.',
   },
   '/pricing': {
-    title: 'Pricing | Vektas',
-    description: 'Flexible private AI engagement models including readiness assessments, deployment, and managed support.',
+    title: 'Engagement Models | Vektas',
+    description:
+      'Flexible consulting and delivery models for assessment, pilot, production implementation, optimization, and ongoing support.',
   },
   '/blog': {
     title: 'Blog | Vektas',
-    description: 'Insights on private AI strategy, AI cost reduction, RAG, and secure enterprise implementation.',
+    description:
+      'Insights on production AI, automation, enterprise integration, private AI, RAG, cost control, and practical software engineering.',
   },
   '/about': {
     title: 'About | Vektas',
-    description: 'Learn about Vektas mission, values, and timeline in private AI and enterprise software integration.',
+    description:
+      'Learn how Vektas combines enterprise software engineering, systems integration, business analysis, and AI to solve complex operational problems.',
   },
   '/contact': {
     title: 'Contact | Vektas',
-    description: 'Contact Vektas for private AI consulting and secure enterprise automation support across North America.',
+    description:
+      'Contact Vektas to discuss an AI, automation, systems integration, or custom software initiative for your organization.',
   },
 }
 
