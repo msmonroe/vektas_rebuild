@@ -2,21 +2,26 @@ import { CtaBanner } from '../components/CtaBanner'
 import { FaqAccordion } from '../components/FaqAccordion'
 import { ScrollReveal } from '../components/ScrollReveal'
 
-const plans = [
+const phases = [
   {
-    name: 'AI Readiness Assessment',
-    price: 'One-time engagement',
-    detail: 'Identify highest ROI opportunities, risks, and implementation roadmap.',
+    name: 'Assessment & Discovery',
+    price: 'Defined-scope engagement',
+    detail: 'Clarify the business problem, current-state architecture, constraints, risks, data boundaries, and a practical implementation roadmap.',
   },
   {
-    name: 'Custom AI Deployment',
-    price: 'Custom quote',
-    detail: 'Design and deploy secure private AI architecture tailored to your environment.',
+    name: 'Pilot & Validation',
+    price: 'Milestone-based delivery',
+    detail: 'Build and test a focused solution against real workflows, integrations, users, and measurable success criteria before broader rollout.',
   },
   {
-    name: 'Managed AI Support',
-    price: 'Monthly support',
-    detail: 'Ongoing optimization, monitoring, and advisory for long-term performance.',
+    name: 'Production Implementation',
+    price: 'Custom project scope',
+    detail: 'Engineer, integrate, deploy, and operationalize the solution with security, governance, observability, documentation, and handoff built in.',
+  },
+  {
+    name: 'Optimization & Support',
+    price: 'Ongoing engagement',
+    detail: 'Improve performance, cost, reliability, adoption, and functionality as business needs and technology change.',
   },
 ]
 
@@ -25,21 +30,21 @@ export function PricingPage() {
     <>
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6" aria-labelledby="pricing-heading">
         <h1 id="pricing-heading" className="text-4xl font-bold tracking-tight text-[#07111F] dark:text-white sm:text-5xl">
-          Pricing
+          Engagement Models
         </h1>
         <p className="mt-4 max-w-3xl text-slate-600 dark:text-slate-300">
-          Flexible engagement models based on your infrastructure, security, and delivery goals.
+          Complex initiatives rarely fit a fixed menu. We structure engagements around clear decisions, measurable milestones, and the level of delivery support your organization needs.
         </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {plans.map((plan, index) => (
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {phases.map((phase, index) => (
             <ScrollReveal
-              key={plan.name}
+              key={phase.name}
               delay={index * 0.05}
               className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900"
             >
-              <h2 className="text-xl font-semibold text-slate-900 dark:text-white">{plan.name}</h2>
-              <p className="mt-3 text-sm font-medium text-blue-600">{plan.price}</p>
-              <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">{plan.detail}</p>
+              <h2 className="text-xl font-semibold text-slate-900 dark:text-white">{phase.name}</h2>
+              <p className="mt-3 text-sm font-medium text-blue-600">{phase.price}</p>
+              <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">{phase.detail}</p>
             </ScrollReveal>
           ))}
         </div>
