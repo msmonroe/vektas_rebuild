@@ -3,6 +3,10 @@ import { NewsletterSignup } from '../components/NewsletterSignup'
 
 type SubmitState = 'idle' | 'submitting' | 'success' | 'error'
 
+type ContactResponse = {
+  message?: string
+}
+
 export function ContactPage() {
   const [submitState, setSubmitState] = useState<SubmitState>('idle')
   const [statusMessage, setStatusMessage] = useState('')
@@ -23,10 +27,22 @@ export function ContactPage() {
         body: JSON.stringify(payload),
       })
 
-      const result = (await response.json()) as { message?: string }
+      const responseText = await response.text()
+      let result: ContactResponse = {}
+
+      if (responseText) {
+        try {
+          result = JSON.parse(responseText) as ContactResponse
+        } catch {
+          result = {}
+        }
+      }
 
       if (!response.ok) {
-        throw new Error(result.message || 'Unable to send your message right now.')
+        throw new Error(
+          result.message ||
+            'The contact form is not available yet. Please email sales@vektas.com and we will respond promptly.',
+        )
       }
 
       form.reset()
@@ -34,7 +50,11 @@ export function ContactPage() {
       setStatusMessage('Thanks. Your message has been sent to the Vektas team.')
     } catch (error) {
       setSubmitState('error')
-      setStatusMessage(error instanceof Error ? error.message : 'Unable to send your message right now.')
+      setStatusMessage(
+        error instanceof Error
+          ? error.message
+          : 'The contact form is not available yet. Please email sales@vektas.com.',
+      )
     }
   }
 
