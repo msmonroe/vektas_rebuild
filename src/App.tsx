@@ -41,9 +41,9 @@ const routeMeta: Record<string, { title: string; description: string }> = {
       'Vektas brings decades of enterprise software, integration, analysis, and delivery experience to complex operational business problems.',
   },
   '/contact': {
-    title: 'Contact | Vektas',
+    title: 'Start a Conversation | Vektas',
     description:
-      'Talk with Vektas about manual work, disconnected systems, operational bottlenecks, or a technology investment that is not producing enough business value.',
+      'Talk with Vektas about manual work, disconnected systems, operational bottlenecks, or technology investments that are not producing enough business value.',
   },
 }
 
@@ -75,8 +75,9 @@ function useSeoMetadata() {
 
   useEffect(() => {
     document.title = meta.title
+    const canonicalUrl = `https://vektas.com${location.pathname === '/' ? '/' : location.pathname}`
 
-    const ensureMetaTag = (selector: string, attributes: Record<string, string>) => {
+    const ensureMetaTag = (selector: string, attributes: Record<string, string>, content: string) => {
       let element = document.head.querySelector(selector) as HTMLMetaElement | null
 
       if (!element) {
@@ -85,28 +86,24 @@ function useSeoMetadata() {
         document.head.appendChild(element)
       }
 
-      element.content = meta.description
+      element.content = content
     }
 
-    ensureMetaTag('meta[name="description"]', { name: 'description' })
-    ensureMetaTag('meta[property="og:description"]', { property: 'og:description' })
-    ensureMetaTag('meta[name="twitter:description"]', { name: 'twitter:description' })
+    ensureMetaTag('meta[name="description"]', { name: 'description' }, meta.description)
+    ensureMetaTag('meta[property="og:description"]', { property: 'og:description' }, meta.description)
+    ensureMetaTag('meta[name="twitter:description"]', { name: 'twitter:description' }, meta.description)
+    ensureMetaTag('meta[property="og:title"]', { property: 'og:title' }, meta.title)
+    ensureMetaTag('meta[name="twitter:title"]', { name: 'twitter:title' }, meta.title)
+    ensureMetaTag('meta[property="og:url"]', { property: 'og:url' }, canonicalUrl)
 
-    const ensureTitleMeta = (selector: string, attributes: Record<string, string>) => {
-      let element = document.head.querySelector(selector) as HTMLMetaElement | null
-
-      if (!element) {
-        element = document.createElement('meta')
-        Object.entries(attributes).forEach(([key, value]) => element?.setAttribute(key, value))
-        document.head.appendChild(element)
-      }
-
-      element.content = meta.title
+    let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
+    if (!canonical) {
+      canonical = document.createElement('link')
+      canonical.rel = 'canonical'
+      document.head.appendChild(canonical)
     }
-
-    ensureTitleMeta('meta[property="og:title"]', { property: 'og:title' })
-    ensureTitleMeta('meta[name="twitter:title"]', { name: 'twitter:title' })
-  }, [meta])
+    canonical.href = canonicalUrl
+  }, [location.pathname, meta])
 }
 
 function AppRoutes() {
