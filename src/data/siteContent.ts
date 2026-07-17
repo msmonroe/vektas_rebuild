@@ -1,9 +1,9 @@
 export const navLinks = [
   { label: 'Home', to: '/' },
-  { label: 'Services', to: '/services' },
-  { label: 'Solutions', to: '/solutions' },
-  { label: 'Engagements', to: '/pricing' },
-  { label: 'Blog', to: '/blog' },
+  { label: 'Problems We Solve', to: '/solutions' },
+  { label: 'How We Help', to: '/services' },
+  { label: 'How We Work', to: '/pricing' },
+  { label: 'Insights', to: '/blog' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },
 ]
@@ -12,92 +12,92 @@ export const faqs = [
   {
     question: 'How does a typical Vektas engagement begin?',
     answer:
-      'Most engagements begin with a focused assessment or discovery phase to define the business problem, technical constraints, measurable outcomes, and a practical path to production.',
+      'Most engagements begin with a focused assessment of the operational problem, the people and systems involved, the cost of the current process, and the business outcome worth improving.',
   },
   {
-    question: 'Can Vektas work with existing Microsoft and .NET environments?',
+    question: 'Do we need to replace our current systems?',
     answer:
-      'Yes. Vektas has deep experience with Microsoft ecosystems, .NET applications, SQL Server, identity platforms, REST APIs, cloud services, and legacy enterprise systems.',
+      'Usually not. Vektas looks first for practical ways to improve, connect, or extend the systems you already have before recommending a larger replacement program.',
   },
   {
-    question: 'Do you support regulated or security-sensitive environments?',
+    question: 'Can Vektas work in regulated or security-sensitive environments?',
     answer:
       'Yes. Solutions can be designed around privacy, governance, auditability, data residency, access control, and human-review requirements appropriate to the organization and use case.',
   },
   {
-    question: 'Does every solution require an LLM or generative AI?',
+    question: 'Does every solution involve AI?',
     answer:
-      'No. Vektas uses AI where reasoning and adaptation add value, and deterministic software, APIs, rules, and conventional automation where reliability, speed, cost, and auditability matter more.',
+      'No. We use AI when it adds measurable value. Many operational problems are better solved with process changes, integration, conventional software, automation, or clearer reporting.',
   },
 ]
 
 export const serviceCards = [
   {
-    title: 'AI Systems Engineering',
-    description: 'Design and build production-ready AI systems aligned with enterprise architecture, security, governance, and measurable business outcomes.',
+    title: 'Reduce Manual Work',
+    description: 'Eliminate repetitive data entry, status chasing, report assembly, and routine coordination that consume skilled employee time.',
   },
   {
-    title: 'Intelligent Workflow Automation',
-    description: 'Modernize complex workflows by combining AI-assisted reasoning with deterministic automation, orchestration, APIs, and human review.',
+    title: 'Connect Disconnected Systems',
+    description: 'Make information move reliably between applications, departments, and data sources without depending on copy-and-paste work.',
   },
   {
-    title: 'Enterprise Knowledge Systems',
-    description: 'Build private RAG and knowledge solutions that connect employees to trusted internal information with appropriate controls and citations.',
+    title: 'Improve Access to Business Knowledge',
+    description: 'Help employees find trusted internal information quickly instead of searching through files, inboxes, portals, and shared drives.',
   },
   {
-    title: 'Document Intelligence',
-    description: 'Extract, classify, validate, summarize, and route information from complex documents while preserving review and audit paths.',
+    title: 'Simplify Document-Heavy Processes',
+    description: 'Reduce the time required to review, classify, extract, validate, summarize, and route information from business documents.',
   },
   {
-    title: 'Systems Integration',
-    description: 'Connect disconnected applications, data sources, identity platforms, and APIs so information moves reliably across the organization.',
+    title: 'Build Software That Fits the Operation',
+    description: 'Create internal applications, portals, workflow tools, and reporting solutions when off-the-shelf products do not fit the way the business works.',
   },
   {
-    title: 'Custom Software Development',
-    description: 'Build internal applications, portals, APIs, and workflow tools around business processes that off-the-shelf products do not fit well.',
+    title: 'Modernize Limiting Legacy Systems',
+    description: 'Extend, connect, or incrementally replace systems that are slowing the organization down without forcing an unnecessary rip-and-replace program.',
   },
   {
-    title: 'Legacy Modernization',
-    description: 'Extend, integrate, or incrementally modernize business-critical legacy systems without forcing unnecessary rip-and-replace programs.',
+    title: 'Improve Operational Visibility',
+    description: 'Turn fragmented information into timely reporting and clearer insight for managers and business leaders.',
   },
   {
-    title: 'AI Production Readiness',
-    description: 'Evaluate architecture, data, security, governance, observability, cost, and operational readiness before AI systems move into production.',
+    title: 'Make AI Produce Business Value',
+    description: 'Move beyond experiments by applying AI to specific workflows where it can improve speed, quality, capacity, or customer service.',
   },
 ]
 
 export const industries = [
   {
-    name: 'Healthcare & Life Sciences',
-    summary: 'Modernize administrative, knowledge, document, and operational workflows while respecting sensitive-data and governance requirements.',
+    name: 'Complex Multi-Department Operations',
+    summary: 'Reduce friction where work crosses teams, systems, approval paths, and business units.',
   },
   {
-    name: 'Manufacturing & Industrial',
-    summary: 'Connect operational systems, automate reporting and knowledge workflows, and improve access to technical information across teams.',
+    name: 'Healthcare & Life Sciences',
+    summary: 'Improve administrative, document, knowledge, and operational workflows while respecting sensitive-data requirements.',
+  },
+  {
+    name: 'Manufacturing & Distribution',
+    summary: 'Connect operational information, simplify reporting, and improve the flow of work across facilities and teams.',
   },
   {
     name: 'Legal & Professional Services',
-    summary: 'Accelerate document-intensive work, internal knowledge access, matter operations, and service delivery without losing human oversight.',
+    summary: 'Improve document-intensive work, internal knowledge access, matter operations, and client-service delivery.',
   },
   {
     name: 'Financial & Business Services',
-    summary: 'Improve analysis, operations, reporting, and internal knowledge workflows with systems designed for control and auditability.',
+    summary: 'Reduce manual effort in analysis, reporting, operations, and information-heavy business processes.',
   },
   {
     name: 'Public Sector & Regulated Organizations',
-    summary: 'Design practical automation and AI systems around security, governance, data control, and existing technology constraints.',
-  },
-  {
-    name: 'Mid-Market & Enterprise Operations',
-    summary: 'Reduce friction across departments by integrating systems, modernizing workflows, and building software around complex operational needs.',
+    summary: 'Improve service and operational efficiency within governance, security, budget, and legacy-system constraints.',
   },
 ]
 
 export const blogPosts = [
-  'Why Private AI Matters',
-  'Ollama vs Cloud AI',
-  'Reducing AI Costs',
-  'What is RAG?',
-  'Building AI Safely',
-  'From AI Experiment to Production System',
+  'The Hidden Cost of Manual Work',
+  'Why Your Systems Feel More Complicated Every Year',
+  'When Custom Software Makes Financial Sense',
+  'Five Signs Your Business Has an Integration Problem',
+  'Why AI Projects Fail to Produce Business Value',
+  'How to Find Operational Friction Before It Becomes Overhead',
 ]

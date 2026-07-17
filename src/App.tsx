@@ -11,39 +11,39 @@ import { SolutionsPage } from './pages/SolutionsPage'
 
 const routeMeta: Record<string, { title: string; description: string }> = {
   '/': {
-    title: 'Vektas | AI, Automation & Software Engineering',
+    title: 'Vektas | Make Your Business Easier to Operate',
     description:
-      'Vektas helps mid-market and enterprise organizations modernize workflows, integrate systems, and deploy production-ready AI and custom software.',
+      'Vektas helps mid-market organizations reduce manual work, connect disconnected systems, and improve operations through practical software, automation, integration, and AI.',
   },
   '/services': {
-    title: 'Services | Vektas',
+    title: 'How We Help | Vektas',
     description:
-      'AI systems engineering, workflow modernization, systems integration, custom software, enterprise knowledge systems, and production readiness services.',
+      'Reduce manual work, connect systems, improve access to information, modernize limiting applications, and make technology produce measurable business value.',
   },
   '/solutions': {
-    title: 'Solutions | Vektas',
+    title: 'Problems We Solve | Vektas',
     description:
-      'Practical AI, automation, integration, document intelligence, and knowledge systems for complex mid-market and enterprise operations.',
+      'Vektas helps organizations address operational friction, disconnected systems, repetitive work, slow reporting, information bottlenecks, and ineffective technology investments.',
   },
   '/pricing': {
-    title: 'Engagement Models | Vektas',
+    title: 'How We Work | Vektas',
     description:
-      'Flexible consulting and delivery models for assessment, pilot, production implementation, optimization, and ongoing support.',
+      'A practical engagement model for understanding operational problems, prioritizing improvements, delivering focused solutions, and measuring results.',
   },
   '/blog': {
-    title: 'Blog | Vektas',
+    title: 'Insights | Vektas',
     description:
-      'Insights on production AI, automation, enterprise integration, private AI, RAG, cost control, and practical software engineering.',
+      'Practical insights on operational efficiency, business systems, workflow improvement, software modernization, automation, and measurable AI value.',
   },
   '/about': {
     title: 'About | Vektas',
     description:
-      'Learn how Vektas combines enterprise software engineering, systems integration, business analysis, and AI to solve complex operational problems.',
+      'Vektas brings decades of enterprise software, integration, analysis, and delivery experience to complex operational business problems.',
   },
   '/contact': {
-    title: 'Contact | Vektas',
+    title: 'Start a Conversation | Vektas',
     description:
-      'Contact Vektas to discuss an AI, automation, systems integration, or custom software initiative for your organization.',
+      'Talk with Vektas about manual work, disconnected systems, operational bottlenecks, or technology investments that are not producing enough business value.',
   },
 }
 
@@ -75,8 +75,9 @@ function useSeoMetadata() {
 
   useEffect(() => {
     document.title = meta.title
+    const canonicalUrl = `https://vektas.com${location.pathname === '/' ? '/' : location.pathname}`
 
-    const ensureMetaTag = (selector: string, attributes: Record<string, string>) => {
+    const ensureMetaTag = (selector: string, attributes: Record<string, string>, content: string) => {
       let element = document.head.querySelector(selector) as HTMLMetaElement | null
 
       if (!element) {
@@ -85,28 +86,24 @@ function useSeoMetadata() {
         document.head.appendChild(element)
       }
 
-      element.content = meta.description
+      element.content = content
     }
 
-    ensureMetaTag('meta[name="description"]', { name: 'description' })
-    ensureMetaTag('meta[property="og:description"]', { property: 'og:description' })
-    ensureMetaTag('meta[name="twitter:description"]', { name: 'twitter:description' })
+    ensureMetaTag('meta[name="description"]', { name: 'description' }, meta.description)
+    ensureMetaTag('meta[property="og:description"]', { property: 'og:description' }, meta.description)
+    ensureMetaTag('meta[name="twitter:description"]', { name: 'twitter:description' }, meta.description)
+    ensureMetaTag('meta[property="og:title"]', { property: 'og:title' }, meta.title)
+    ensureMetaTag('meta[name="twitter:title"]', { name: 'twitter:title' }, meta.title)
+    ensureMetaTag('meta[property="og:url"]', { property: 'og:url' }, canonicalUrl)
 
-    const ensureTitleMeta = (selector: string, attributes: Record<string, string>) => {
-      let element = document.head.querySelector(selector) as HTMLMetaElement | null
-
-      if (!element) {
-        element = document.createElement('meta')
-        Object.entries(attributes).forEach(([key, value]) => element?.setAttribute(key, value))
-        document.head.appendChild(element)
-      }
-
-      element.content = meta.title
+    let canonical = document.head.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
+    if (!canonical) {
+      canonical = document.createElement('link')
+      canonical.rel = 'canonical'
+      document.head.appendChild(canonical)
     }
-
-    ensureTitleMeta('meta[property="og:title"]', { property: 'og:title' })
-    ensureTitleMeta('meta[name="twitter:title"]', { name: 'twitter:title' })
-  }, [meta])
+    canonical.href = canonicalUrl
+  }, [location.pathname, meta])
 }
 
 function AppRoutes() {
