@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { Layout } from './components/Layout'
+import { getBlogPost } from './data/blogPosts'
 import { AboutPage } from './pages/AboutPage'
+import { BlogArticlePage } from './pages/BlogArticlePage'
 import { BlogPage } from './pages/BlogPage'
 import { ContactPage } from './pages/ContactPage'
 import { HomePage } from './pages/HomePage'
@@ -68,10 +70,19 @@ function useTheme() {
 function useSeoMetadata() {
   const location = useLocation()
 
-  const meta = useMemo(
-    () => routeMeta[location.pathname] ?? routeMeta['/'],
-    [location.pathname],
-  )
+  const meta = useMemo(() => {
+    if (location.pathname.startsWith('/blog/')) {
+      const post = getBlogPost(location.pathname.replace('/blog/', ''))
+      if (post) {
+        return {
+          title: `${post.title} | Vektas`,
+          description: post.description,
+        }
+      }
+    }
+
+    return routeMeta[location.pathname] ?? routeMeta['/']
+  }, [location.pathname])
 
   useEffect(() => {
     document.title = meta.title
@@ -119,6 +130,7 @@ function AppRoutes() {
       <Route path="/solutions" element={<SolutionsPage />} />
       <Route path="/pricing" element={<PricingPage />} />
       <Route path="/blog" element={<BlogPage />} />
+      <Route path="/blog/:slug" element={<BlogArticlePage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
