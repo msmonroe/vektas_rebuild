@@ -19,374 +19,297 @@ export type BlogPost = {
 export const blogPosts: BlogPost[] = [
   {
     slug: 'why-private-ai-matters',
-    title: 'Why Private AI Matters',
-    description: 'A practical guide to deciding when private AI is worth the investment and where hybrid architectures make more sense.',
-    category: 'AI Strategy',
+    title: 'Protect Sensitive Business Data Without Slowing Down the Work',
+    description: 'How organizations can use AI while keeping sensitive information controlled, useful, and available to the people who need it.',
+    category: 'Risk & Operations',
     publishedAt: '2026-07-17',
-    readTime: '7 min read',
+    readTime: '6 min read',
     introduction: [
-      'Many organizations begin with public cloud AI because it is fast, capable, and easy to test. The harder question comes later: should sensitive data, internal knowledge, or business-critical workflows continue to depend entirely on a shared external platform?',
-      'Private AI is not simply a model installed behind a firewall. It is an architecture and operating model that gives an organization greater control over data, identity, access, retention, observability, and change. For some workloads, that control is essential. For others, it adds cost without enough value.',
+      'Most organizations do not have an AI problem. They have a control problem. Employees want faster answers and less manual work, while leaders need confidence that customer records, contracts, internal procedures, and proprietary information are not wandering into places they should not go.',
+      'The goal is not to keep AI out. The goal is to make useful information easier to use without weakening privacy, accountability, or operational control.',
     ],
     sections: [
       {
-        heading: 'Private AI is a control decision',
+        heading: 'Start with the business consequence',
         paragraphs: [
-          'A system does not become private merely because it runs locally. Privacy depends on the entire path data follows: how it is collected, transmitted, stored, retrieved, logged, reviewed, and deleted.',
-          'The practical goal is to define who may access which information, what the model is allowed to do with it, how activity is audited, and what happens when the system is wrong.',
+          'Before choosing a platform, identify what would happen if the information were exposed, misunderstood, or unavailable. A marketing draft and a patient record do not belong in the same risk category.',
+          'This keeps the discussion grounded in business impact rather than turning it into a debate over products and model names.',
+        ],
+      },
+      {
+        heading: 'Give employees a safer path than copy and paste',
+        paragraphs: [
+          'When approved tools are inconvenient, people create their own shortcuts. A controlled internal service can give employees the speed they want while applying identity, access rules, approved data sources, and audit logging behind the scenes.',
+          'The strongest governance strategy is often not prohibition. It is making the safe path the easiest path.',
         ],
         bullets: [
-          'Classify sensitive data and define handling rules.',
-          'Use identity-based permissions instead of shared AI accounts.',
-          'Set retention rules for prompts, responses, logs, and source documents.',
-          'Require human review for consequential decisions or external communications.',
+          'Use existing employee identities and permissions.',
+          'Limit answers to information the user is already allowed to see.',
+          'Record the sources used for important answers.',
+          'Require human approval before consequential actions are taken.',
         ],
       },
       {
-        heading: 'Where private AI creates value',
+        heading: 'Keep sensitive work inside the right boundary',
         paragraphs: [
-          'Private AI is most valuable when an organization possesses information that is both sensitive and strategically useful. Examples include internal procedures, customer records, contracts, product designs, incident reports, clinical or legal documents, and proprietary research.',
-          'It can also help when availability and latency matter. A dedicated deployment may provide predictable response times, continue operating during an external outage, or support environments with limited internet access.',
+          'Some work can safely use managed external services. Other work may need dedicated infrastructure, private networking, local processing, or strict data-retention controls.',
+          'A hybrid approach often produces the best outcome: sensitive information stays controlled, while lower-risk tasks use broader external capabilities when they provide a clear advantage.',
         ],
       },
       {
-        heading: 'The costs do not disappear',
+        heading: 'Measure whether control improves the operation',
         paragraphs: [
-          'Private AI replaces some vendor costs with engineering and operational responsibilities. Models need infrastructure, security updates, evaluation, monitoring, capacity planning, and upgrade management.',
-          'That can make private deployment the wrong answer for an early experiment, a low-risk workflow, or a team without the capacity to operate it. The technology should earn its complexity through a clear requirement.',
-        ],
-      },
-      {
-        heading: 'Hybrid architectures often win',
-        paragraphs: [
-          'Many organizations do not need an all-or-nothing choice. Sensitive retrieval and document processing can remain inside a controlled environment while a managed model handles approved, de-identified, or low-risk work.',
-          'The strongest designs place models behind a governed application layer. Permissions, citations, audit logs, business rules, and workflow state remain under organizational control. The model performs a bounded reasoning task rather than becoming the entire system.',
-        ],
-      },
-      {
-        heading: 'A practical decision framework',
-        paragraphs: ['Classify the workload before debating platforms. Identify the data involved, the consequence of disclosure, the consequence of an incorrect answer, expected usage, latency needs, integration requirements, and the team that will operate the solution.'],
-        bullets: [
-          'Use managed AI when speed, broad capability, and low operational overhead dominate.',
-          'Use private or dedicated AI when isolation, residency, or data control are firm requirements.',
-          'Use hybrid architecture when different workflow steps have different risks.',
-          'Use conventional software when rules, search, SQL, or automation can solve the problem more reliably.',
+          'A private system is not successful merely because it is private. It should reduce search time, shorten case handling, improve consistency, or make previously inaccessible knowledge useful.',
+          'Track the operational result alongside the risk controls. Otherwise, privacy becomes an expensive feature that employees avoid.',
         ],
       },
     ],
     conclusion: [
-      'Private AI matters because control matters. The right question is not whether private AI is universally better. It is whether a particular process needs stronger control than a general managed service can provide economically and operationally.',
-      'Start with workload classification and measurable outcomes, then use the smallest amount of AI and infrastructure needed to produce a trustworthy result.',
+      'The practical question is not whether private AI is fashionable. It is whether the organization can improve speed and access while keeping the right information under the right controls.',
+      'Begin with the workflow, the sensitivity of the information, and the cost of getting it wrong. Then design the smallest controlled system that improves the work.',
     ],
   },
   {
     slug: 'ollama-vs-cloud-ai',
-    title: 'Ollama vs. Cloud AI: Choosing the Right Runtime',
-    description: 'Compare local model runtimes such as Ollama with managed cloud AI across capability, privacy, cost, reliability, and operational burden.',
-    category: 'Architecture',
+    title: 'Choose an AI Delivery Model That Fits the Business, Not the Demo',
+    description: 'A decision framework for balancing speed, control, reliability, cost, and operating responsibility when deploying AI.',
+    category: 'Delivery Strategy',
     publishedAt: '2026-07-17',
-    readTime: '7 min read',
+    readTime: '6 min read',
     introduction: [
-      'Ollama makes it easy to run a language model on a workstation or server. Managed cloud AI makes it easy to call a powerful model through an API. Both can look interchangeable during a demo, but they create very different production systems.',
-      'The useful comparison is not local versus cloud as an ideology. It is a workload-by-workload decision involving capability, privacy, throughput, cost, reliability, and the organization’s willingness to operate infrastructure.',
+      'A successful demonstration can make every deployment option look easy. The differences appear later, when real users arrive, confidential information enters the workflow, demand changes, and someone has to support the system on Monday morning.',
+      'The right delivery model is the one that produces the required business result with acceptable cost, control, and operational burden.',
     ],
     sections: [
       {
-        heading: 'Where Ollama fits',
+        heading: 'Decide what the workflow must accomplish',
         paragraphs: [
-          'Ollama is well suited to development, prototyping, private experimentation, and applications that benefit from running open models locally. It reduces setup friction by handling model downloads, serving, and a straightforward local API.',
-          'A developer can test retrieval, classification, summarization, structured extraction, and workflow automation without first creating cloud resources or sending documents outside the local environment.',
-        ],
-        bullets: [
-          'Fast local experimentation with open models.',
-          'No per-request API charge during development.',
-          'Direct control over the model version and host.',
-          'Useful for disconnected or tightly controlled environments.',
+          'Begin with the completed task: a reviewed contract, a classified document, an answered policy question, a routed service request, or a prepared report.',
+          'Required accuracy, response time, availability, data sensitivity, and transaction volume matter more than whether the underlying model runs locally or through a cloud service.',
         ],
       },
       {
-        heading: 'Where managed cloud AI fits',
+        heading: 'Use managed services when speed matters most',
         paragraphs: [
-          'Managed platforms typically provide access to larger models, elastic capacity, enterprise identity options, safety tooling, and operational support. They reduce the hardware and model-serving expertise the application team must maintain.',
-          'They are attractive when demand is irregular. Instead of purchasing hardware for peak usage, an organization can pay for actual consumption and scale more quickly.',
+          'Managed services are often the fastest path to strong capabilities and variable capacity. They can be an excellent fit for early validation, uneven demand, and lower-risk work where infrastructure ownership would add little value.',
+          'The tradeoff is continued dependence on an external provider, network availability, pricing changes, and service policies.',
         ],
       },
       {
-        heading: 'Model quality changes the economics',
+        heading: 'Use controlled infrastructure when ownership matters most',
         paragraphs: [
-          'A smaller local model may be inexpensive to run, but it is not inexpensive if lower accuracy creates more review work or failed automation. Conversely, using the strongest cloud model for every task wastes money when a small model, rules engine, or database query would work just as well.',
-          'Compare the cost of a completed business task, not only token prices or hardware. Include retries, human correction, engineering time, monitoring, and the cost of errors.',
+          'Dedicated or local systems can improve data control, predictability, and independence. They may be appropriate for sensitive knowledge, disconnected environments, or sustained workloads where ownership creates a clear economic advantage.',
+          'That control comes with responsibility for security, capacity, upgrades, monitoring, and support. Hardware is not free simply because there is no per-request invoice.',
         ],
       },
       {
-        heading: 'Operations are part of the product',
+        heading: 'Avoid forcing one answer onto every task',
         paragraphs: [
-          'A local runtime gives control but transfers responsibility. Someone must manage hardware, drivers, model files, capacity, security patches, backups, health checks, and upgrades. Once the service matters, a laptop under a desk is no longer an architecture.',
-          'Cloud changes rather than removes operational risk. Rate limits, network failures, regional outages, model changes, and provider policies still need to be handled by the application.',
-        ],
-      },
-      {
-        heading: 'Use a routing layer',
-        paragraphs: [
-          'For many systems, the best answer is both. Put model access behind an application service, route tasks according to sensitivity and complexity, and preserve deterministic fallbacks for critical steps.',
-          'This reduces provider lock-in and allows the system to use local control where it matters and managed capability where it earns its cost.',
+          'Many organizations benefit from a mixed design. Routine or sensitive tasks can remain inside a controlled environment, while difficult or unusual cases use a stronger managed service after data is filtered or de-identified.',
+          'The application should route work according to business rules rather than making every department live with the same compromise.',
         ],
       },
     ],
     conclusion: [
-      'Ollama optimizes for local control and accessibility. Managed AI optimizes for capability, elasticity, and reduced infrastructure burden.',
-      'Choose based on the economics and risks of the complete workflow. A modest hybrid design often outperforms a grand commitment to either extreme.',
+      'Do not choose an architecture because it wins a laboratory comparison. Choose it because it produces a reliable business result at an acceptable total cost.',
+      'The best design is frequently a modest hybrid system that assigns each kind of work to the environment where it performs best.',
     ],
   },
   {
     slug: 'reducing-ai-costs',
-    title: 'Reducing AI Costs Without Crippling the System',
-    description: 'Engineering patterns for reducing token usage and model spend while preserving quality, reliability, and auditability.',
-    category: 'AI Operations',
+    title: 'Reduce AI Operating Costs by Paying for Judgment, Not Repetition',
+    description: 'How to lower AI spending by moving stable work into software and reserving expensive reasoning for decisions and exceptions.',
+    category: 'Cost & Efficiency',
     publishedAt: '2026-07-17',
-    readTime: '8 min read',
+    readTime: '7 min read',
     introduction: [
-      'AI cost problems rarely begin with one expensive request. They emerge when a prototype becomes a workflow, usage grows, context accumulates, retries multiply, and every step is sent to the largest available model.',
-      'Sustainable cost control comes from system design. Reserve expensive reasoning for the moments where it creates measurable value and use conventional software everywhere else.',
+      'AI costs usually become painful when a useful experiment is copied into a high-volume workflow. Every document, request, and exception is sent through the same expensive process, even when most of the work is repetitive.',
+      'The durable answer is not simply a cheaper model. It is a better division of labor between software, data, rules, people, and AI.',
     ],
     sections: [
       {
-        heading: 'Measure cost per completed task',
+        heading: 'Measure cost per completed business task',
         paragraphs: [
-          'Token cost is incomplete. A cheap request that fails repeatedly can cost more than one high-quality request. A low-cost model that creates extensive human review may be more expensive than a stronger model that completes the work correctly.',
-          'Track documents processed, cases resolved, reports generated, or minutes saved. Capture model calls, latency, retries, failures, and review outcomes for that unit of work.',
+          'Token counts and API invoices are technical measurements. Leaders need to know the cost of processing one claim, preparing one report, resolving one request, or reviewing one document.',
+          'Include retries, corrections, employee review, delays, and failures. A cheap request that creates more downstream work is not cheap.',
         ],
       },
       {
-        heading: 'Use deterministic software first',
+        heading: 'Move stable steps into deterministic software',
         paragraphs: [
-          'File validation, date parsing, calculations, database lookups, permission checks, routing rules, and exact transformations are usually better handled in code.',
-          'A useful pattern is to let the model create a rule, extraction schema, mapping, or query during setup, validate it, and then execute the deterministic artifact repeatedly. Return to the model only when the input changes or the rule fails.',
+          'Dates, calculations, database lookups, file validation, permission checks, and routine routing are usually better handled by ordinary software.',
+          'AI should focus on ambiguous language, interpretation, unusual cases, and decisions where flexibility adds value. Once a pattern becomes stable, convert it into a reusable rule, query, parser, or workflow step.',
         ],
         bullets: [
-          'Use SQL for structured facts.',
-          'Use parsers for stable formats.',
-          'Use rules for known routing and approvals.',
-          'Use code for calculations and validation.',
-          'Use models for ambiguity, interpretation, and exceptions.',
+          'Use databases for exact facts.',
+          'Use rules for known approvals and routing.',
+          'Use parsers for stable document formats.',
+          'Use AI for ambiguity, exceptions, and judgment.',
         ],
       },
       {
-        heading: 'Route to the smallest capable model',
+        heading: 'Escalate only when the task requires it',
         paragraphs: [
-          'Classify requests by complexity. Simple extraction or tagging may use a small model. Difficult analysis can escalate to a stronger model. High-risk cases can move to human review.',
-          'Model selection should belong to the application rather than being hard-coded into every workflow step.',
+          'Simple requests can use smaller, faster resources. Difficult cases can escalate to stronger models. High-risk cases can move to a person.',
+          'This tiered approach reduces cost while preserving quality where quality matters most.',
         ],
       },
       {
-        heading: 'Control context deliberately',
+        heading: 'Stop paying repeatedly for unchanged information',
         paragraphs: [
-          'Long prompts often contain repeated instructions, irrelevant history, duplicate documents, and retrieval results that were never filtered. More context can increase cost, latency, and confusion.',
-          'Summarize durable state, retrieve only relevant passages, remove duplicates, and store facts in databases or workflow state instead of replaying an entire transcript.',
-        ],
-      },
-      {
-        heading: 'Cache and validate',
-        paragraphs: [
-          'Cache embeddings, classifications, summaries, and metadata when the source and instructions have not changed. Invalidate the cache when the source or governing prompt changes.',
-          'Require structured output when software consumes a response. Validate fields, types, allowed values, and citations. A targeted repair request is cheaper than rerunning an entire workflow blindly.',
+          'Approved summaries, classifications, extracted metadata, and document indexes can often be reused until the source or governing rule changes.',
+          'Good caching and version control turn repeated reasoning into a one-time expense rather than a permanent tax on the workflow.',
         ],
       },
     ],
     conclusion: [
-      'The most economical AI system is not the one with the cheapest model. It is the one that completes the business process reliably with the least total waste.',
-      'Measure completed work, move stable steps into deterministic code, route by complexity, control context, cache durable results, and validate outputs.',
+      'The cheapest AI system is not the one with the lowest advertised price. It is the one that completes the work with the least total waste.',
+      'Pay for judgment where judgment is valuable. Turn repetition into software.',
     ],
   },
   {
     slug: 'what-is-rag',
-    title: 'What Is RAG, and When Should You Use It?',
-    description: 'A plain-language explanation of retrieval-augmented generation, its architecture, common failure modes, and the use cases it fits.',
-    category: 'Knowledge Systems',
+    title: 'Turn Scattered Internal Knowledge Into Faster, Better Decisions',
+    description: 'How a governed knowledge system can help employees find reliable answers across policies, manuals, procedures, and organizational documents.',
+    category: 'Knowledge Access',
     publishedAt: '2026-07-17',
-    readTime: '8 min read',
+    readTime: '7 min read',
     introduction: [
-      'A language model does not automatically know an organization’s current policies, contracts, procedures, product documentation, or customer records. Retrieval-augmented generation, usually called RAG, gives an AI application a controlled way to consult approved information before answering.',
-      'RAG is often described as chatting with documents. A production RAG system is more accurately a search and evidence pipeline wrapped around a language model.',
+      'Important organizational knowledge is often trapped in shared drives, old portals, email attachments, PDFs, and the memories of experienced employees. The result is repeated questions, inconsistent answers, slow onboarding, and avoidable mistakes.',
+      'A well-designed internal knowledge assistant can shorten the distance between a question and an answer, while still showing employees where the answer came from.',
     ],
     sections: [
       {
-        heading: 'How RAG works',
+        heading: 'The outcome is trusted access, not document chat',
         paragraphs: [
-          'Documents are collected from approved sources, cleaned, divided into useful passages, and indexed. When a user asks a question, the system searches for relevant passages and provides them to the model with instructions to answer from that evidence.',
-          'A mature system also returns citations, applies access controls, records which sources were used, and declines to answer when evidence is insufficient.',
-        ],
-        bullets: [
-          'Ingest and normalize source documents.',
-          'Create searchable passages and metadata.',
-          'Apply user and document permissions.',
-          'Retrieve and rank relevant evidence.',
-          'Generate a constrained answer with citations.',
+          'The useful result is not that an employee can have a conversation with a PDF. It is that the employee can find the current approved answer without searching five systems or interrupting a subject-matter expert.',
+          'That requires reliable source collection, permissions, freshness, ranking, and citations.',
         ],
       },
       {
-        heading: 'Where RAG is a strong fit',
+        heading: 'Prioritize authoritative information',
         paragraphs: [
-          'RAG works well when people repeatedly need answers from a changing body of text. Internal policies, technical manuals, procedures, research libraries, support knowledge, and product documentation are common examples.',
-          'It is especially useful when an answer must cite its source so the user can inspect the evidence.',
+          'A current approved policy should outrank an old draft. A published procedure should outrank meeting notes. Each source needs ownership, version information, effective dates, and approval status.',
+          'Without that structure, a knowledge assistant can retrieve the wrong answer very efficiently.',
         ],
       },
       {
-        heading: 'Where RAG is the wrong tool',
+        heading: 'Respect the permissions employees already have',
         paragraphs: [
-          'RAG is not a replacement for a transactional database. If the question asks for an exact balance, inventory count, eligibility status, or current order state, query the system of record.',
-          'It is also not sufficient for actions requiring authorization or deterministic rules. A model may explain an approval policy, but the workflow engine should enforce it.',
+          'The system should not reveal information merely because it found a relevant passage. Access controls must be applied before information reaches the answer-generation step.',
+          'A useful internal assistant behaves like the organization’s existing systems, not like a universal master key.',
         ],
       },
       {
-        heading: 'Why naive RAG disappoints',
+        heading: 'Use systems of record for exact operational facts',
         paragraphs: [
-          'A quick demo often splits documents every fixed number of characters and sends the nearest passages to a model. That can work until real users ask ambiguous questions, documents conflict, tables are involved, or permissions differ.',
-          'Common failures include poor conversion, fragments without context, stale indexes, missing metadata, weak ranking, and prompts that allow the model to fill gaps from general knowledge.',
-        ],
-      },
-      {
-        heading: 'Design for authority and freshness',
-        paragraphs: [
-          'Not every document should have equal weight. A current approved policy should outrank an old draft. Metadata should capture source, owner, effective date, version, document type, and approval status.',
-          'Permissions must be applied before evidence reaches the model. Filtering the final answer is too late if unauthorized content was already retrieved or logged.',
+          'Policies and procedures are well suited to a knowledge system. Current balances, order status, inventory, eligibility, and other exact facts should come directly from the authoritative application or database.',
+          'The strongest solution often combines both: narrative guidance from approved documents and exact facts from business systems.',
         ],
       },
     ],
     conclusion: [
-      'RAG is governed retrieval plus language synthesis. It helps people navigate organizational knowledge, but it does not eliminate the need for source quality, permissions, citations, workflow rules, or human judgment.',
-      'Use RAG when answers live in text and evidence matters. Use databases and APIs when exact current facts matter.',
+      'A knowledge assistant succeeds when employees spend less time searching, experts answer fewer repeated questions, and decisions become more consistent.',
+      'Begin with one valuable knowledge domain, clean the sources, preserve permissions, and measure whether people reach dependable answers faster.',
     ],
   },
   {
     slug: 'building-ai-safely',
-    title: 'Building AI Safely: Guardrails That Work in Production',
-    description: 'Concrete controls for data, permissions, validation, human review, monitoring, and incident response.',
-    category: 'Governance',
+    title: 'Automate More Work Without Losing Oversight or Accountability',
+    description: 'Practical controls that allow organizations to automate useful work while keeping people in charge of consequential decisions.',
+    category: 'Governance & Control',
     publishedAt: '2026-07-17',
-    readTime: '8 min read',
+    readTime: '7 min read',
     introduction: [
-      'An AI application becomes risky when it is given sensitive information, authority, or reach without matching controls. The model may produce the visible output, but safety is primarily a property of the surrounding system.',
-      'Production guardrails are not one moderation filter. They are layered controls that limit exposure, restrict actions, validate results, preserve accountability, and provide a safe path when the system is uncertain.',
+      'Organizations often treat safety as a choice between moving quickly and moving carefully. That is the wrong tradeoff. The real goal is to automate the routine work while making unusual, uncertain, or consequential cases more visible to people.',
+      'Good controls do not merely block failures. They define where the system may act, where it must ask, and how the organization learns when reality does not match the design.',
     ],
     sections: [
       {
-        heading: 'Begin with the consequence of failure',
+        heading: 'Separate assistance from authority',
         paragraphs: [
-          'Risk should be based on what can happen when the system is wrong, unavailable, manipulated, or exposed. An internal brainstorming assistant and an automated eligibility tool should not share the same controls merely because both use a language model.',
-          'Classify each use case by data sensitivity, decision impact, user population, external exposure, reversibility, and availability requirements.',
+          'A system may draft, summarize, classify, recommend, or prepare a transaction without being allowed to approve, send, pay, prescribe, hire, deny, or commit the organization.',
+          'That separation allows useful automation while preserving clear responsibility for consequential actions.',
         ],
       },
       {
-        heading: 'Minimize and compartmentalize data',
+        heading: 'Escalate uncertainty instead of hiding it',
         paragraphs: [
-          'Do not provide every field simply because the application can access it. Select the minimum information required, mask identifiers when possible, and separate workloads with different sensitivity levels.',
-          'Prompts and responses can contain the same sensitive data as source systems. Logging must support investigation without creating a second uncontrolled repository.',
+          'When evidence is weak, instructions conflict, or required information is missing, the system should stop and route the case for review.',
+          'A confident-sounding guess is not operational resilience. A visible exception queue is.',
         ],
       },
       {
-        heading: 'Enforce permissions outside the model',
+        heading: 'Constrain what the system can touch',
         paragraphs: [
-          'A model should never decide whether a user may view a document, approve a payment, change a record, or trigger an external action. Identity, authorization, and policy enforcement belong in deterministic services.',
-          'Expose narrow tools with explicit inputs and server-side validation rather than broad database or administrative access.',
+          'Use narrowly scoped permissions, approved data sources, transaction limits, and explicit tool access. A system that prepares a change should not automatically possess unlimited authority to execute it.',
+          'Small boundaries reduce the consequences of both mistakes and malicious input.',
         ],
       },
       {
-        heading: 'Constrain and validate outputs',
+        heading: 'Design a usable recovery path',
         paragraphs: [
-          'When software consumes a response, require a defined schema and validate it. Reject unknown fields, impossible values, unsupported citations, and instructions that violate workflow state.',
-          'For user-facing answers, display sources, distinguish generated content from verified facts, and make uncertainty visible.',
-        ],
-      },
-      {
-        heading: 'Make human review operational',
-        paragraphs: [
-          'Effective review requires a queue, enough context to decide, an audit trail, escalation rules, and feedback that improves the system.',
-          'Focus review on exceptions, high-impact cases, low-confidence results, and policy-defined samples rather than forcing a person to reread every output.',
-        ],
-      },
-      {
-        heading: 'Prepare for misuse and failure',
-        paragraphs: [
-          'Test malicious documents, conflicting instructions, unsupported requests, data-exfiltration attempts, and tool misuse. Assume external content may contain instructions designed to manipulate the model.',
-          'Operational safety also requires rate limits, timeouts, circuit breakers, fallbacks, version control, rollback plans, and clear incident ownership.',
+          'Employees need to know how to correct an answer, reverse an action, report a problem, and continue the work manually when the system is unavailable.',
+          'Recovery is part of the product. Without it, every exception becomes an emergency.',
         ],
       },
     ],
     conclusion: [
-      'Safe AI is disciplined engineering applied to a probabilistic component. Data controls, permissions, validation, review, testing, observability, and incident response do most of the heavy lifting.',
-      'The model should be powerful inside a narrow role. The application should remain the authority for access, state, rules, and action.',
+      'Safe automation does not require keeping AI away from meaningful work. It requires clear authority boundaries, visible uncertainty, limited permissions, and reliable recovery.',
+      'The goal is not an autonomous black box. It is a controlled operating system for getting more work done with fewer avoidable failures.',
     ],
   },
   {
-    slug: 'from-ai-experiment-to-production-system',
-    title: 'From AI Experiment to Production System',
-    description: 'A practical roadmap for moving an AI proof of concept into a reliable, governed, measurable production capability.',
-    category: 'Delivery',
+    slug: 'ai-experiment-to-production',
+    title: 'Turn a Promising AI Pilot Into a Reliable Business Process',
+    description: 'Why successful demonstrations fail in production and how to build the ownership, controls, integration, and measurement needed for lasting value.',
+    category: 'Execution',
     publishedAt: '2026-07-17',
-    readTime: '9 min read',
+    readTime: '8 min read',
     introduction: [
-      'An AI proof of concept can be assembled in days. A production system must survive real data, real users, changing models, security review, operational failures, and the question of whether it actually improves the business process.',
-      'The distance between demo and production is usually created by missing requirements, integration, evaluation, governance, ownership, and operational design, not by a lack of clever prompts.',
+      'A pilot proves that something can work. Production proves that it can keep working while real employees, real data, exceptions, deadlines, and business consequences press against it every day.',
+      'The gap between those two states is rarely solved by a better prompt. It is solved by turning the demonstration into an owned, measured, supportable business process.',
     ],
     sections: [
       {
-        heading: 'Define the business outcome first',
+        heading: 'Define the operational result',
         paragraphs: [
-          'Identify who performs the work today, what inputs they use, where time or quality is lost, what an acceptable result looks like, and how exceptions are handled.',
-          'Avoid goals such as deploy a chatbot. Better goals include reducing review time, lowering rework, improving access to approved procedures, or shortening case handling.',
+          'Replace broad goals such as improve productivity with a measurable target: reduce handling time, shorten onboarding, increase first-contact resolution, improve document throughput, or reduce repeated expert questions.',
+          'A system without a measurable result will be judged by enthusiasm until enthusiasm fades.',
         ],
       },
       {
-        heading: 'Map the complete workflow',
+        heading: 'Design for the exceptions revealed by real work',
         paragraphs: [
-          'The model usually handles only part of the process. Production design must account for identity, source systems, data preparation, workflow state, notifications, approvals, error handling, retention, and downstream actions.',
-          'A workflow map reveals which steps need reasoning and which should remain deterministic.',
+          'Pilots usually use clean examples and attentive testers. Production includes incomplete records, conflicting documents, unusual requests, unavailable systems, and users who interpret instructions differently.',
+          'Collect these cases deliberately. Decide which can be handled by software, which require better data, and which should always go to a person.',
         ],
       },
       {
-        heading: 'Build an evaluation set early',
+        heading: 'Connect the system to the actual workflow',
         paragraphs: [
-          'Collect representative examples from the real process, including routine cases, ambiguous cases, edge cases, poor-quality inputs, conflicting sources, and requests the system should refuse.',
-          'Define success for each example: correct fields, source citations, acceptable summaries, proper routing, policy compliance, or a correct decision to seek human review.',
+          'Copying information between a new tool and the system of record can erase the time savings the pilot promised. The production solution needs identity, permissions, workflow state, document sources, business applications, and clear handoffs.',
+          'Integration is where an AI feature becomes operational improvement.',
         ],
       },
       {
-        heading: 'Choose architecture from constraints',
+        heading: 'Assign ownership before launch',
         paragraphs: [
-          'Model and platform selection should follow requirements for sensitivity, response time, volume, capability, integration, residency, and operating responsibility.',
-          'Keep model access behind a service or gateway so authentication, routing, logging, limits, prompt versions, and fallbacks are centralized.',
+          'Someone must own business performance, source quality, access, support, changes, and incident response. These responsibilities may span several teams, but they cannot belong to nobody.',
+          'A pilot with no operating owner is a temporary demonstration wearing a production badge.',
         ],
       },
       {
-        heading: 'Engineer the failure paths',
+        heading: 'Release gradually and watch the right signals',
         paragraphs: [
-          'Production inputs will be missing, malformed, oversized, stale, or unauthorized. Model calls will time out. Structured output will fail validation. Retrieval will sometimes return weak evidence.',
-          'Define what the system does in each case. Retry selectively, preserve state, provide useful errors, escalate when appropriate, and avoid inventing a result merely to keep the interface smooth.',
-        ],
-      },
-      {
-        heading: 'Pilot with ownership and metrics',
-        paragraphs: [
-          'A pilot should use real users and realistic conditions while limiting scope and consequence. Name the person responsible for support, the business owner who accepts outcomes, and the team that can change or disable the system.',
-          'Measure adoption, completion, quality, review effort, latency, cost, and exception rates. Enthusiasm is useful feedback, but it is not a production metric by itself.',
-        ],
-      },
-      {
-        heading: 'Release through controlled change',
-        paragraphs: [
-          'Prompts, retrieval settings, model versions, and source documents can all change behavior. Version them, test them, deploy gradually, and preserve a rollback path.',
-          'After launch, treat failures and overrides as product data. Stable patterns can move into rules, retrieval can improve, and true exceptions can become clearer.',
+          'Begin with a controlled group or narrow process. Compare outcomes with the existing method, review failures, and expand only when the evidence supports it.',
+          'Track completed work, accuracy, review effort, exception volume, user adoption, cost, and business impact. Availability alone does not prove value.',
         ],
       },
     ],
     conclusion: [
-      'Moving from experiment to production converts possibility into responsibility. The winning system is not the most impressive demonstration. It is the one that completes useful work, protects the organization, and can be operated by a real team.',
-      'Start with the workflow, measure outcomes, evaluate real cases, separate reasoning from deterministic control, design failure paths, and assign ownership.',
+      'The path to production is a business-operating exercise supported by technology, not a technology project searching for a business owner.',
+      'Define the result, design for exceptions, integrate with real work, assign ownership, and expand from evidence. That is how a pilot becomes an asset rather than another abandoned experiment.',
     ],
   },
 ]
-
-export function getBlogPost(slug: string) {
-  return blogPosts.find((post) => post.slug === slug)
-}
