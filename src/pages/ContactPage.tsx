@@ -24,7 +24,9 @@ export function ContactPage() {
 
   useEffect(() => {
     fetch('/api/config')
-      .then(async (response) => (response.ok ? response.json() : Promise.reject()))
+      .then(async (response) =>
+        response.ok ? response.json() : Promise.reject(new Error('Unable to load contact form configuration.')),
+      )
       .then((config: { turnstileSiteKey?: string }) => setSiteKey(config.turnstileSiteKey || ''))
       .catch(() => setSiteKey(''))
   }, [])
