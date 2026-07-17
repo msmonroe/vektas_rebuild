@@ -22,6 +22,11 @@ type TurnstileResult = {
   'error-codes'?: string[]
 }
 
+type ResendError = {
+  name?: string
+  message?: string
+}
+
 function json(body: Record<string, unknown>, status = 200): Response {
   return new Response(JSON.stringify(body), {
     status,
@@ -85,6 +90,25 @@ async function verifyTurnstile(request: Request, env: Env, token: string): Promi
   return result.success === true
 }
 
+function resendFailureMessage(status: number, error: ResendError): string {
+  const detail = `${error.name || ''} ${error.message || ''}`.toLowerCase()
+
+  if (status === 401 || detail.includes('api key')) {
+    return 'Email delivery is not authenticated yet. Please email sales@vektas.com.'
+  }
+
+  if (
+    detail.includes('domain') ||
+    detail.includes('sender') ||
+    detail.includes('from') ||
+    detail.includes('verify')
+  ) {
+    return 'The website sending address has not been verified yet. Please email sales@vektas.com.'
+  }
+
+  return 'Unable to send your message right now. Please email sales@vektas.com.'
+}
+
 async function handleContact(request: Request, env: Env): Promise<Response> {
   if (request.method !== 'POST') {
     return json({ message: 'Method not allowed.' }, 405)
@@ -106,7 +130,6 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
     return json({ message: 'Invalid request.' }, 400)
   }
 
-  // Honeypot: bots commonly fill hidden fields. Return success without sending.
   if (clean(payload.website, 200)) {
     return json({ message: 'Thanks. Your message has been received.' })
   }
@@ -163,8 +186,17 @@ async function handleContact(request: Request, env: Env): Promise<Response> {
   })
 
   if (!response.ok) {
-    console.error('Resend request failed:', response.status, await response.text())
-    return json({ message: 'Unable to send your message right now. Please email sales@vektas.com.' }, 502)
+    const responseText = await response.text()
+    let resendError: ResendError = {}
+
+    try {
+      resendError = JSON.parse(responseText) as ResendError
+    } catch {
+      resendError = { message: responseText }
+    }
+
+    console.error('Resend request failed:', response.status, resendError)
+    return json({ message: resendFailureMessage(response.status, resendError) }, 502)
   }
 
   return json({ message: 'Message sent successfully.' })
