@@ -20,7 +20,7 @@ export function ContactPage() {
   const [turnstileToken, setTurnstileToken] = useState('')
   const [siteKey, setSiteKey] = useState('')
   const turnstileContainerRef = useRef<HTMLDivElement>(null)
-  const widgetIdRef = useRef<string>()
+  const widgetIdRef = useRef<string | undefined>(undefined)
 
   useEffect(() => {
     fetch('/api/config')
