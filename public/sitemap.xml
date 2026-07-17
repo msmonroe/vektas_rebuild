@@ -1,24 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://vektas.com/</loc>
-  </url>
-  <url>
-    <loc>https://vektas.com/services</loc>
-  </url>
-  <url>
-    <loc>https://vektas.com/solutions</loc>
-  </url>
-  <url>
-    <loc>https://vektas.com/pricing</loc>
-  </url>
-  <url>
-    <loc>https://vektas.com/blog</loc>
-  </url>
-  <url>
-    <loc>https://vektas.com/about</loc>
-  </url>
-  <url>
-    <loc>https://vektas.com/contact</loc>
-  </url>
+  <url><loc>https://vektas.com/</loc></url>
+  <url><loc>https://vektas.com/services</loc></url>
+  <url><loc>https://vektas.com/solutions</loc></url>
+  <url><loc>https://vektas.com/pricing</loc></url>
+  <url><loc>https://vektas.com/blog</loc></url>
+  <url><loc>https://vektas.com/blog/why-private-ai-matters</loc></url>
+  <url><loc>https://vektas.com/blog/ollama-vs-cloud-ai</loc></url>
+  <url><loc>https://vektas.com/blog/reducing-ai-costs</loc></url>
+  <url><loc>https://vektas.com/blog/what-is-rag</loc></url>
+  <url><loc>https://vektas.com/blog/building-ai-safely</loc></url>
+  <url><loc>https://vektas.com/blog/from-ai-experiment-to-production-system</loc></url>
+  <url><loc>https://vektas.com/about</loc></url>
+  <url><loc>https://vektas.com/contact</loc></url>
 </urlset>
