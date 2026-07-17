@@ -14,10 +14,10 @@ export function BlogPage() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6" aria-labelledby="blog-heading">
       <h1 id="blog-heading" className="text-4xl font-bold tracking-tight text-[#07111F] dark:text-white sm:text-5xl">
-        Blog
+        Better Operations, Practical Results
       </h1>
       <p className="mt-4 max-w-3xl text-slate-600 dark:text-slate-300">
-        Practical guidance on private AI, production architecture, cost control, knowledge systems, governance, and enterprise delivery.
+        Practical guidance for reducing operational friction, protecting sensitive information, controlling costs, improving access to knowledge, and turning promising ideas into reliable business processes.
       </p>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
