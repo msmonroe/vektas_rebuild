@@ -1,5 +1,5 @@
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { getBlogPost } from '../data/blogPosts'
+import { blogPosts } from '../data/blogPosts'
 
 function formatDate(value: string) {
   return new Intl.DateTimeFormat('en-US', {
@@ -11,7 +11,7 @@ function formatDate(value: string) {
 
 export function BlogArticlePage() {
   const { slug = '' } = useParams()
-  const post = getBlogPost(slug)
+  const post = blogPosts.find((candidate) => candidate.slug === slug)
 
   if (!post) {
     return <Navigate to="/blog" replace />
@@ -76,7 +76,7 @@ export function BlogArticlePage() {
       <aside className="mt-12 rounded-2xl bg-slate-100 p-8 dark:bg-slate-900">
         <h2 className="text-xl font-semibold text-slate-900 dark:text-white">Turn the idea into a working system</h2>
         <p className="mt-3 text-slate-600 dark:text-slate-300">
-          Vektas helps mid-market and enterprise organizations assess, design, and deliver practical AI, automation, integration, and custom software initiatives.
+          Vektas helps mid-market and enterprise organizations assess, design, and deliver practical improvements to complex operations.
         </p>
         <Link
           className="mt-5 inline-flex rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700"
