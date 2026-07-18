@@ -13,39 +13,39 @@ import { SolutionsPage } from './pages/SolutionsPage'
 
 const routeMeta: Record<string, { title: string; description: string }> = {
   '/': {
-    title: 'Vektas | AI, Automation & Software Engineering',
+    title: 'Vektas | Better Operations, Measurable Results',
     description:
-      'Vektas helps mid-market and enterprise organizations modernize workflows, integrate systems, and deploy production-ready AI and custom software.',
+      'Vektas helps mid-market and enterprise organizations reduce operational friction, improve consistency, control costs, and turn stalled initiatives into measurable results.',
   },
   '/services': {
     title: 'Services | Vektas',
     description:
-      'AI systems engineering, workflow modernization, systems integration, custom software, enterprise knowledge systems, and production readiness services.',
+      'Practical support for improving complex workflows, reducing delays, connecting teams, strengthening controls, and delivering reliable operational change.',
   },
   '/solutions': {
     title: 'Solutions | Vektas',
     description:
-      'Practical AI, automation, integration, document intelligence, and knowledge systems for complex mid-market and enterprise operations.',
+      'Solutions for slow processes, scattered knowledge, repetitive work, broken handoffs, inconsistent decisions, and difficult operational change.',
   },
   '/pricing': {
     title: 'Engagement Models | Vektas',
     description:
-      'Flexible consulting and delivery models for assessment, pilot, production implementation, optimization, and ongoing support.',
+      'Flexible engagement models for assessment, focused improvement initiatives, implementation, optimization, and ongoing operational support.',
   },
   '/blog': {
-    title: 'Blog | Vektas',
+    title: 'Business Operations Insights | Vektas',
     description:
-      'Practical guidance for reducing operational friction, protecting sensitive information, controlling costs, and improving access to organizational knowledge.',
+      'Practical guidance for reducing delays, controlling costs, protecting information, improving access to knowledge, and delivering dependable operational change.',
   },
   '/about': {
     title: 'About | Vektas',
     description:
-      'Learn how Vektas combines enterprise software engineering, systems integration, business analysis, and AI to solve complex operational problems.',
+      'Learn how Vektas helps organizations untangle complex operations, improve business processes, and turn difficult initiatives into practical results.',
   },
   '/contact': {
     title: 'Contact | Vektas',
     description:
-      'Contact Vektas to discuss an AI, automation, systems integration, or custom software initiative for your organization.',
+      'Contact Vektas to discuss an operational problem, stalled initiative, costly process, or improvement opportunity within your organization.',
   },
 }
 
