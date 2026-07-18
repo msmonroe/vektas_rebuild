@@ -28,6 +28,7 @@ export function ContactPage() {
               </label>
               <input
                 id={field.id}
+                name={field.id}
                 type={field.type}
                 required={field.id !== 'phone'}
                 className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 outline-none ring-blue-600 focus:ring-2 dark:border-slate-700 dark:bg-slate-950 dark:text-white"
@@ -35,11 +36,33 @@ export function ContactPage() {
             </div>
           ))}
           <div>
+            <label htmlFor="problem" className="mb-1 block text-sm font-medium text-slate-800 dark:text-slate-100">
+              What best describes the issue?
+            </label>
+            <select
+              id="problem"
+              name="problem"
+              defaultValue=""
+              required
+              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 outline-none ring-blue-600 focus:ring-2 dark:border-slate-700 dark:bg-slate-950 dark:text-white"
+            >
+              <option value="" disabled>Select one</option>
+              <option>Slow process or bottleneck</option>
+              <option>Manual work or duplicate entry</option>
+              <option>Disconnected systems or departments</option>
+              <option>Scattered knowledge or information</option>
+              <option>Fragile internal application</option>
+              <option>Stalled improvement initiative</option>
+              <option>Other operational problem</option>
+            </select>
+          </div>
+          <div>
             <label htmlFor="message" className="mb-1 block text-sm font-medium text-slate-800 dark:text-slate-100">
               What is happening, and what would you like to improve?
             </label>
             <textarea
               id="message"
+              name="message"
               required
               rows={6}
               placeholder="For example: Requests are taking two weeks because three departments track them differently, and leadership cannot see where they are stalled."
