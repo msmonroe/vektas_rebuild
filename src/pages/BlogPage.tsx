@@ -13,11 +13,12 @@ function formatDate(value: string) {
 export function BlogPage() {
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6" aria-labelledby="blog-heading">
-      <h1 id="blog-heading" className="text-4xl font-bold tracking-tight text-[#07111F] dark:text-white sm:text-5xl">
+      <p className="text-sm font-semibold uppercase tracking-wide text-blue-600">Insights</p>
+      <h1 id="blog-heading" className="mt-3 text-4xl font-bold tracking-tight text-[#07111F] dark:text-white sm:text-5xl">
         Better Operations, Practical Results
       </h1>
-      <p className="mt-4 max-w-3xl text-slate-600 dark:text-slate-300">
-        Practical guidance for reducing operational friction, protecting sensitive information, controlling costs, improving access to knowledge, and turning promising ideas into reliable business processes.
+      <p className="mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-300">
+        Guidance for leaders and operational teams working through slow processes, broken handoffs, rising costs, scattered knowledge, and difficult improvement initiatives.
       </p>
 
       <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -39,7 +40,7 @@ export function BlogPage() {
               <span>{post.readTime}</span>
             </div>
             <Link className="mt-4 text-sm font-semibold text-blue-600 hover:text-blue-700" to={`/blog/${post.slug}`}>
-              Read article →
+              Read insight →
             </Link>
           </ScrollReveal>
         ))}
