@@ -18,298 +18,290 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'why-private-ai-matters',
-    title: 'Protect Sensitive Business Data Without Slowing Down the Work',
-    description: 'How organizations can use AI while keeping sensitive information controlled, useful, and available to the people who need it.',
+    slug: 'reduce-process-delays-and-broken-handoffs',
+    title: 'Reduce Process Delays and Broken Handoffs',
+    description: 'How to find the points where work stalls, ownership becomes unclear, and avoidable delays accumulate across teams.',
+    category: 'Operational Efficiency',
+    publishedAt: '2026-07-17',
+    readTime: '6 min read',
+    introduction: [
+      'Many slow processes are not slow because the work itself is difficult. They are slow because information arrives late, ownership is unclear, approvals sit in queues, and employees spend time asking what happens next.',
+      'The fastest improvements often come from fixing the handoffs between people and departments rather than asking each person to work harder.',
+    ],
+    sections: [
+      {
+        heading: 'Measure elapsed time, not just work time',
+        paragraphs: [
+          'A task may require only twenty minutes of effort but remain open for four days. That gap reveals where waiting, searching, and clarification consume the schedule.',
+          'Track when work enters each stage, when someone actually begins it, and why it waits. The largest delay is frequently outside the task everyone is trying to optimize.',
+        ],
+      },
+      {
+        heading: 'Make ownership visible',
+        paragraphs: [
+          'Every active item should have a clear owner, a current status, and a defined next action. Shared responsibility often becomes invisible responsibility.',
+          'When ownership changes, the receiving person should know what has already happened, what remains unresolved, and what deadline applies.',
+        ],
+      },
+      {
+        heading: 'Remove repeated clarification',
+        paragraphs: [
+          'If employees repeatedly ask for the same missing information, the intake process is incomplete. Capture the required information once, at the beginning, and validate it before the work moves forward.',
+          'This reduces back-and-forth communication and prevents incomplete requests from entering expensive review stages.',
+        ],
+      },
+      {
+        heading: 'Watch the exceptions',
+        paragraphs: [
+          'Routine work should move predictably. Exceptions deserve a visible path with clear escalation rules instead of disappearing into email threads.',
+          'Exception volume is also a useful signal. If the same exception occurs repeatedly, it is no longer an exception. It is a process-design problem.',
+        ],
+      },
+    ],
+    conclusion: [
+      'Better handoffs improve speed without demanding unsustainable effort from employees.',
+      'Start by measuring where work waits, clarifying ownership, improving intake, and making exceptions visible. Those changes often release capacity that was already present but trapped inside the process.',
+    ],
+  },
+  {
+    slug: 'protect-sensitive-information-without-slowing-work',
+    title: 'Protect Sensitive Information Without Slowing Down the Work',
+    description: 'How to strengthen control over confidential information while keeping it accessible to the employees who legitimately need it.',
     category: 'Risk & Operations',
     publishedAt: '2026-07-17',
     readTime: '6 min read',
     introduction: [
-      'Most organizations do not have an AI problem. They have a control problem. Employees want faster answers and less manual work, while leaders need confidence that customer records, contracts, internal procedures, and proprietary information are not wandering into places they should not go.',
-      'The goal is not to keep AI out. The goal is to make useful information easier to use without weakening privacy, accountability, or operational control.',
+      'Security controls fail when they make ordinary work so difficult that employees build their own shortcuts. The challenge is not simply to restrict information. It is to make the right information easy to use by the right people and difficult to misuse.',
+      'Effective control supports the operation instead of forcing the operation to work around it.',
     ],
     sections: [
       {
-        heading: 'Start with the business consequence',
+        heading: 'Classify by consequence',
         paragraphs: [
-          'Before choosing a platform, identify what would happen if the information were exposed, misunderstood, or unavailable. A marketing draft and a patient record do not belong in the same risk category.',
-          'This keeps the discussion grounded in business impact rather than turning it into a debate over products and model names.',
+          'Not every document deserves the same treatment. Identify what would happen if the information were disclosed, altered, misunderstood, or unavailable.',
+          'This allows stronger controls to be concentrated where the business consequence is greatest without burdening low-risk work unnecessarily.',
         ],
       },
       {
-        heading: 'Give employees a safer path than copy and paste',
+        heading: 'Make the approved path easier',
         paragraphs: [
-          'When approved tools are inconvenient, people create their own shortcuts. A controlled internal service can give employees the speed they want while applying identity, access rules, approved data sources, and audit logging behind the scenes.',
-          'The strongest governance strategy is often not prohibition. It is making the safe path the easiest path.',
-        ],
-        bullets: [
-          'Use existing employee identities and permissions.',
-          'Limit answers to information the user is already allowed to see.',
-          'Record the sources used for important answers.',
-          'Require human approval before consequential actions are taken.',
+          'Employees create risky workarounds when approved processes are slow or confusing. A safer process should be faster to locate, easier to follow, and clear about what is permitted.',
+          'Convenience is not the enemy of control. Poorly designed control is.',
         ],
       },
       {
-        heading: 'Keep sensitive work inside the right boundary',
+        heading: 'Limit access according to the job',
         paragraphs: [
-          'Some work can safely use managed external services. Other work may need dedicated infrastructure, private networking, local processing, or strict data-retention controls.',
-          'A hybrid approach often produces the best outcome: sensitive information stays controlled, while lower-risk tasks use broader external capabilities when they provide a clear advantage.',
+          'People should see the information required for their responsibilities, not everything that happens to be stored nearby.',
+          'Access should change when roles change, temporary work ends, or an employee leaves. Dormant access is a quiet form of risk.',
         ],
       },
       {
-        heading: 'Measure whether control improves the operation',
+        heading: 'Preserve accountability',
         paragraphs: [
-          'A private system is not successful merely because it is private. It should reduce search time, shorten case handling, improve consistency, or make previously inaccessible knowledge useful.',
-          'Track the operational result alongside the risk controls. Otherwise, privacy becomes an expensive feature that employees avoid.',
+          'Important actions should leave a clear record of who accessed information, what changed, and who approved the decision.',
+          'Good records make reviews faster, disputes easier to resolve, and unusual activity easier to investigate.',
         ],
       },
     ],
     conclusion: [
-      'The practical question is not whether private AI is fashionable. It is whether the organization can improve speed and access while keeping the right information under the right controls.',
-      'Begin with the workflow, the sensitivity of the information, and the cost of getting it wrong. Then design the smallest controlled system that improves the work.',
+      'Strong information control should reduce risk without becoming a tax on every employee interaction.',
+      'Classify information by consequence, simplify the approved path, align access with responsibilities, and preserve clear accountability.',
     ],
   },
   {
-    slug: 'ollama-vs-cloud-ai',
-    title: 'Choose an AI Delivery Model That Fits the Business, Not the Demo',
-    description: 'A decision framework for balancing speed, control, reliability, cost, and operating responsibility when deploying AI.',
-    category: 'Delivery Strategy',
-    publishedAt: '2026-07-17',
-    readTime: '6 min read',
-    introduction: [
-      'A successful demonstration can make every deployment option look easy. The differences appear later, when real users arrive, confidential information enters the workflow, demand changes, and someone has to support the system on Monday morning.',
-      'The right delivery model is the one that produces the required business result with acceptable cost, control, and operational burden.',
-    ],
-    sections: [
-      {
-        heading: 'Decide what the workflow must accomplish',
-        paragraphs: [
-          'Begin with the completed task: a reviewed contract, a classified document, an answered policy question, a routed service request, or a prepared report.',
-          'Required accuracy, response time, availability, data sensitivity, and transaction volume matter more than whether the underlying model runs locally or through a cloud service.',
-        ],
-      },
-      {
-        heading: 'Use managed services when speed matters most',
-        paragraphs: [
-          'Managed services are often the fastest path to strong capabilities and variable capacity. They can be an excellent fit for early validation, uneven demand, and lower-risk work where infrastructure ownership would add little value.',
-          'The tradeoff is continued dependence on an external provider, network availability, pricing changes, and service policies.',
-        ],
-      },
-      {
-        heading: 'Use controlled infrastructure when ownership matters most',
-        paragraphs: [
-          'Dedicated or local systems can improve data control, predictability, and independence. They may be appropriate for sensitive knowledge, disconnected environments, or sustained workloads where ownership creates a clear economic advantage.',
-          'That control comes with responsibility for security, capacity, upgrades, monitoring, and support. Hardware is not free simply because there is no per-request invoice.',
-        ],
-      },
-      {
-        heading: 'Avoid forcing one answer onto every task',
-        paragraphs: [
-          'Many organizations benefit from a mixed design. Routine or sensitive tasks can remain inside a controlled environment, while difficult or unusual cases use a stronger managed service after data is filtered or de-identified.',
-          'The application should route work according to business rules rather than making every department live with the same compromise.',
-        ],
-      },
-    ],
-    conclusion: [
-      'Do not choose an architecture because it wins a laboratory comparison. Choose it because it produces a reliable business result at an acceptable total cost.',
-      'The best design is frequently a modest hybrid system that assigns each kind of work to the environment where it performs best.',
-    ],
-  },
-  {
-    slug: 'reducing-ai-costs',
-    title: 'Reduce AI Operating Costs by Paying for Judgment, Not Repetition',
-    description: 'How to lower AI spending by moving stable work into software and reserving expensive reasoning for decisions and exceptions.',
+    slug: 'lower-operating-costs-by-removing-repetitive-work',
+    title: 'Lower Operating Costs by Removing Repetitive Work',
+    description: 'A practical approach to finding recurring effort that consumes time without creating proportional value.',
     category: 'Cost & Efficiency',
     publishedAt: '2026-07-17',
     readTime: '7 min read',
     introduction: [
-      'AI costs usually become painful when a useful experiment is copied into a high-volume workflow. Every document, request, and exception is sent through the same expensive process, even when most of the work is repetitive.',
-      'The durable answer is not simply a cheaper model. It is a better division of labor between software, data, rules, people, and AI.',
+      'Operating costs often rise through thousands of small repetitions: re-entering the same information, checking the same conditions, rebuilding the same report, and correcting the same preventable error.',
+      'The goal is not to eliminate people. It is to stop spending skilled time on work that adds little judgment or value.',
     ],
     sections: [
       {
-        heading: 'Measure cost per completed business task',
+        heading: 'Measure the full cost of repetition',
         paragraphs: [
-          'Token counts and API invoices are technical measurements. Leaders need to know the cost of processing one claim, preparing one report, resolving one request, or reviewing one document.',
-          'Include retries, corrections, employee review, delays, and failures. A cheap request that creates more downstream work is not cheap.',
+          'Count the time spent performing the task, waiting for it, correcting it, and explaining it. Small tasks become expensive when they occur hundreds of times each month.',
+          'Use a completed business unit such as a processed request, reviewed document, prepared report, or resolved case. That reveals the true cost more clearly than isolated activity measurements.',
         ],
       },
       {
-        heading: 'Move stable steps into deterministic software',
+        heading: 'Separate judgment from routine',
         paragraphs: [
-          'Dates, calculations, database lookups, file validation, permission checks, and routine routing are usually better handled by ordinary software.',
-          'AI should focus on ambiguous language, interpretation, unusual cases, and decisions where flexibility adds value. Once a pattern becomes stable, convert it into a reusable rule, query, parser, or workflow step.',
-        ],
-        bullets: [
-          'Use databases for exact facts.',
-          'Use rules for known approvals and routing.',
-          'Use parsers for stable document formats.',
-          'Use AI for ambiguity, exceptions, and judgment.',
+          'Some steps require interpretation and experience. Others follow the same rule every time. Treating both kinds of work identically wastes expertise.',
+          'Standardize predictable steps and reserve employee attention for unusual, sensitive, or consequential cases.',
         ],
       },
       {
-        heading: 'Escalate only when the task requires it',
+        heading: 'Fix the source of recurring errors',
         paragraphs: [
-          'Simple requests can use smaller, faster resources. Difficult cases can escalate to stronger models. High-risk cases can move to a person.',
-          'This tiered approach reduces cost while preserving quality where quality matters most.',
+          'Repeated correction is not quality control. It is evidence that the process is generating defects upstream.',
+          'Improve the intake, validation, instructions, or ownership that creates the mistake rather than budgeting permanent labor to repair it.',
         ],
       },
       {
-        heading: 'Stop paying repeatedly for unchanged information',
+        heading: 'Reuse work that has not changed',
         paragraphs: [
-          'Approved summaries, classifications, extracted metadata, and document indexes can often be reused until the source or governing rule changes.',
-          'Good caching and version control turn repeated reasoning into a one-time expense rather than a permanent tax on the workflow.',
+          'Approved descriptions, recurring calculations, standard classifications, and frequently requested information should not be recreated from scratch each time.',
+          'Reuse reduces cost, improves consistency, and shortens delivery time, provided the source and approval remain current.',
         ],
       },
     ],
     conclusion: [
-      'The cheapest AI system is not the one with the lowest advertised price. It is the one that completes the work with the least total waste.',
-      'Pay for judgment where judgment is valuable. Turn repetition into software.',
+      'Sustainable cost reduction comes from removing waste, not merely squeezing more activity from the same staff.',
+      'Measure recurring effort, separate judgment from routine, correct defects at their source, and reuse work that remains valid.',
     ],
   },
   {
-    slug: 'what-is-rag',
-    title: 'Turn Scattered Internal Knowledge Into Faster, Better Decisions',
-    description: 'How a governed knowledge system can help employees find reliable answers across policies, manuals, procedures, and organizational documents.',
+    slug: 'turn-scattered-knowledge-into-faster-decisions',
+    title: 'Turn Scattered Internal Knowledge Into Faster Decisions',
+    description: 'How to reduce searching, repeated questions, inconsistent answers, and dependence on a few experienced employees.',
     category: 'Knowledge Access',
     publishedAt: '2026-07-17',
     readTime: '7 min read',
     introduction: [
-      'Important organizational knowledge is often trapped in shared drives, old portals, email attachments, PDFs, and the memories of experienced employees. The result is repeated questions, inconsistent answers, slow onboarding, and avoidable mistakes.',
-      'A well-designed internal knowledge assistant can shorten the distance between a question and an answer, while still showing employees where the answer came from.',
+      'Critical knowledge is often spread across shared folders, old portals, email attachments, policy documents, and the memories of long-tenured employees. People lose time searching, interrupt experts, and make inconsistent decisions from different versions of the truth.',
+      'A useful knowledge program makes approved information easier to find, easier to trust, and easier to maintain.',
     ],
     sections: [
       {
-        heading: 'The outcome is trusted access, not document chat',
+        heading: 'Begin with a high-value question',
         paragraphs: [
-          'The useful result is not that an employee can have a conversation with a PDF. It is that the employee can find the current approved answer without searching five systems or interrupting a subject-matter expert.',
-          'That requires reliable source collection, permissions, freshness, ranking, and citations.',
+          'Do not start by trying to organize everything. Choose a business area where repeated questions, slow onboarding, or inconsistent answers create visible cost.',
+          'A focused domain creates measurable results and exposes the governance work required before expanding.',
         ],
       },
       {
-        heading: 'Prioritize authoritative information',
+        heading: 'Establish which source is authoritative',
         paragraphs: [
-          'A current approved policy should outrank an old draft. A published procedure should outrank meeting notes. Each source needs ownership, version information, effective dates, and approval status.',
-          'Without that structure, a knowledge assistant can retrieve the wrong answer very efficiently.',
+          'Employees cannot make consistent decisions when drafts, outdated policies, and approved procedures appear equally valid.',
+          'Each important source needs an owner, an effective date, a review schedule, and a clear status.',
         ],
       },
       {
-        heading: 'Respect the permissions employees already have',
+        heading: 'Preserve context',
         paragraphs: [
-          'The system should not reveal information merely because it found a relevant passage. Access controls must be applied before information reaches the answer-generation step.',
-          'A useful internal assistant behaves like the organization’s existing systems, not like a universal master key.',
+          'A paragraph can be accurate and still be misleading when separated from its scope, exception, or approval condition.',
+          'Organize information so employees can see not only the answer but also when it applies, who owns it, and where the full source can be reviewed.',
         ],
       },
       {
-        heading: 'Use systems of record for exact operational facts',
+        heading: 'Measure the reduction in friction',
         paragraphs: [
-          'Policies and procedures are well suited to a knowledge system. Current balances, order status, inventory, eligibility, and other exact facts should come directly from the authoritative application or database.',
-          'The strongest solution often combines both: narrative guidance from approved documents and exact facts from business systems.',
+          'Track search time, repeated questions, onboarding time, answer consistency, and the number of cases escalated to subject-matter experts.',
+          'The value is not the size of the document collection. It is the amount of useful work employees can complete with less interruption and uncertainty.',
         ],
       },
     ],
     conclusion: [
-      'A knowledge assistant succeeds when employees spend less time searching, experts answer fewer repeated questions, and decisions become more consistent.',
-      'Begin with one valuable knowledge domain, clean the sources, preserve permissions, and measure whether people reach dependable answers faster.',
+      'Organizational knowledge becomes valuable when people can reach the current, approved answer at the moment they need it.',
+      'Start with one costly knowledge gap, identify authoritative sources, preserve context, and measure whether decisions become faster and more consistent.',
     ],
   },
   {
-    slug: 'building-ai-safely',
-    title: 'Automate More Work Without Losing Oversight or Accountability',
-    description: 'Practical controls that allow organizations to automate useful work while keeping people in charge of consequential decisions.',
+    slug: 'increase-throughput-without-losing-oversight',
+    title: 'Increase Throughput Without Losing Oversight',
+    description: 'How to move routine work faster while keeping consequential decisions, exceptions, and accountability visible.',
     category: 'Governance & Control',
     publishedAt: '2026-07-17',
     readTime: '7 min read',
     introduction: [
-      'Organizations often treat safety as a choice between moving quickly and moving carefully. That is the wrong tradeoff. The real goal is to automate the routine work while making unusual, uncertain, or consequential cases more visible to people.',
-      'Good controls do not merely block failures. They define where the system may act, where it must ask, and how the organization learns when reality does not match the design.',
+      'Faster operations are valuable only when speed does not hide errors, weaken accountability, or make unusual cases harder to see.',
+      'The strongest processes move routine work quickly and direct employee attention toward the situations where judgment matters most.',
     ],
     sections: [
       {
-        heading: 'Separate assistance from authority',
+        heading: 'Define which decisions require a person',
         paragraphs: [
-          'A system may draft, summarize, classify, recommend, or prepare a transaction without being allowed to approve, send, pay, prescribe, hire, deny, or commit the organization.',
-          'That separation allows useful automation while preserving clear responsibility for consequential actions.',
+          'Drafting, preparing, checking, and routing are different from approving, paying, denying, hiring, prescribing, or committing the organization.',
+          'Clear authority boundaries allow routine work to move faster while preserving responsibility for consequential outcomes.',
         ],
       },
       {
-        heading: 'Escalate uncertainty instead of hiding it',
+        heading: 'Create visible exception paths',
         paragraphs: [
-          'When evidence is weak, instructions conflict, or required information is missing, the system should stop and route the case for review.',
-          'A confident-sounding guess is not operational resilience. A visible exception queue is.',
+          'Unusual, incomplete, or conflicting cases should not disappear into side conversations. They need a clear queue, an owner, a reason for escalation, and a service expectation.',
+          'A visible exception process improves control and reveals recurring problems that deserve permanent correction.',
         ],
       },
       {
-        heading: 'Constrain what the system can touch',
+        heading: 'Use limits that match the risk',
         paragraphs: [
-          'Use narrowly scoped permissions, approved data sources, transaction limits, and explicit tool access. A system that prepares a change should not automatically possess unlimited authority to execute it.',
-          'Small boundaries reduce the consequences of both mistakes and malicious input.',
+          'Low-risk work may move with minimal review. Higher-risk work may require additional evidence, approval, or transaction limits.',
+          'Proportionate controls protect the organization without forcing every routine item through the most expensive path.',
         ],
       },
       {
-        heading: 'Design a usable recovery path',
+        heading: 'Design recovery before failure',
         paragraphs: [
-          'Employees need to know how to correct an answer, reverse an action, report a problem, and continue the work manually when the system is unavailable.',
-          'Recovery is part of the product. Without it, every exception becomes an emergency.',
+          'Employees should know how to correct a mistake, reverse an action, report a problem, and continue the work when the normal process is unavailable.',
+          'A practical recovery path prevents isolated failures from becoming operational emergencies.',
         ],
       },
     ],
     conclusion: [
-      'Safe automation does not require keeping AI away from meaningful work. It requires clear authority boundaries, visible uncertainty, limited permissions, and reliable recovery.',
-      'The goal is not an autonomous black box. It is a controlled operating system for getting more work done with fewer avoidable failures.',
+      'Oversight does not require slowing every item. It requires clear authority, visible exceptions, proportionate limits, and reliable recovery.',
+      'That structure allows routine work to move faster while keeping people focused on the decisions that carry real consequence.',
     ],
   },
   {
-    slug: 'ai-experiment-to-production',
-    title: 'Turn a Promising AI Pilot Into a Reliable Business Process',
-    description: 'Why successful demonstrations fail in production and how to build the ownership, controls, integration, and measurement needed for lasting value.',
+    slug: 'turn-improvement-initiatives-into-reliable-operations',
+    title: 'Turn Improvement Initiatives Into Reliable Operations',
+    description: 'Why promising pilots stall and how to build the ownership, measurement, integration, and support needed for lasting results.',
     category: 'Execution',
     publishedAt: '2026-07-17',
     readTime: '8 min read',
     introduction: [
-      'A pilot proves that something can work. Production proves that it can keep working while real employees, real data, exceptions, deadlines, and business consequences press against it every day.',
-      'The gap between those two states is rarely solved by a better prompt. It is solved by turning the demonstration into an owned, measured, supportable business process.',
+      'A pilot proves that an idea can work under attention. An operational process proves that it can keep working with real employees, real deadlines, incomplete information, competing priorities, and ordinary support constraints.',
+      'The difference is not enthusiasm. It is ownership, integration, measurement, and disciplined expansion.',
     ],
     sections: [
       {
-        heading: 'Define the operational result',
+        heading: 'Define the result before the activity',
         paragraphs: [
-          'Replace broad goals such as improve productivity with a measurable target: reduce handling time, shorten onboarding, increase first-contact resolution, improve document throughput, or reduce repeated expert questions.',
-          'A system without a measurable result will be judged by enthusiasm until enthusiasm fades.',
+          'Replace broad goals such as improve productivity with a measurable operational target: reduce handling time, shorten onboarding, improve first-contact resolution, lower rework, or increase document throughput.',
+          'A project that cannot describe the improved result will eventually be judged by usage or excitement rather than value.',
         ],
       },
       {
-        heading: 'Design for the exceptions revealed by real work',
+        heading: 'Test the exceptions, not only the ideal case',
         paragraphs: [
-          'Pilots usually use clean examples and attentive testers. Production includes incomplete records, conflicting documents, unusual requests, unavailable systems, and users who interpret instructions differently.',
-          'Collect these cases deliberately. Decide which can be handled by software, which require better data, and which should always go to a person.',
+          'Demonstrations usually use clean examples and attentive participants. Operations include incomplete requests, conflicting information, absences, policy exceptions, and deadlines.',
+          'Collect those cases early and decide which require better intake, clearer rules, additional review, or a different process altogether.',
         ],
       },
       {
-        heading: 'Connect the system to the actual workflow',
+        heading: 'Fit the improvement into real work',
         paragraphs: [
-          'Copying information between a new tool and the system of record can erase the time savings the pilot promised. The production solution needs identity, permissions, workflow state, document sources, business applications, and clear handoffs.',
-          'Integration is where an AI feature becomes operational improvement.',
+          'A new process that requires employees to copy information between several places may erase the promised savings.',
+          'Successful changes align with existing responsibilities, approvals, records, and handoffs so the improvement becomes part of the operation rather than another layer beside it.',
         ],
       },
       {
-        heading: 'Assign ownership before launch',
+        heading: 'Assign durable ownership',
         paragraphs: [
-          'Someone must own business performance, source quality, access, support, changes, and incident response. These responsibilities may span several teams, but they cannot belong to nobody.',
-          'A pilot with no operating owner is a temporary demonstration wearing a production badge.',
+          'Someone must own performance, source quality, access, support, changes, and incident response. These responsibilities may be shared, but they cannot remain undefined.',
+          'A pilot without an operating owner is a temporary demonstration wearing a permanent name tag.',
         ],
       },
       {
-        heading: 'Release gradually and watch the right signals',
+        heading: 'Expand from evidence',
         paragraphs: [
-          'Begin with a controlled group or narrow process. Compare outcomes with the existing method, review failures, and expand only when the evidence supports it.',
-          'Track completed work, accuracy, review effort, exception volume, user adoption, cost, and business impact. Availability alone does not prove value.',
+          'Begin with a controlled group or narrow process. Compare the result with the previous method, review failures, and expand only when the evidence supports it.',
+          'Track completed work, cycle time, quality, review effort, exception volume, adoption, operating cost, and business impact.',
         ],
       },
     ],
     conclusion: [
-      'The path to production is a business-operating exercise supported by technology, not a technology project searching for a business owner.',
-      'Define the result, design for exceptions, integrate with real work, assign ownership, and expand from evidence. That is how a pilot becomes an asset rather than another abandoned experiment.',
+      'Lasting improvement is an operating discipline, not a launch event.',
+      'Define the outcome, design for real exceptions, fit the change into existing work, assign ownership, and expand from measured results.',
     ],
   },
 ]
+
+export function getBlogPost(slug: string) {
+  return blogPosts.find((post) => post.slug === slug)
+}
