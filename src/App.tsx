@@ -1,7 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { Layout } from './components/Layout'
+import { blogPosts } from './data/blogPosts'
 import { AboutPage } from './pages/AboutPage'
+import { BlogArticlePage } from './pages/BlogArticlePage'
 import { BlogPage } from './pages/BlogPage'
 import { ContactPage } from './pages/ContactPage'
 import { HomePage } from './pages/HomePage'
@@ -11,39 +13,39 @@ import { SolutionsPage } from './pages/SolutionsPage'
 
 const routeMeta: Record<string, { title: string; description: string }> = {
   '/': {
-    title: 'Vektas | AI, Automation & Software Engineering',
+    title: 'Vektas | Make Complex Work Easier, Faster & More Reliable',
     description:
-      'Vektas helps mid-market and enterprise organizations modernize workflows, integrate systems, and deploy production-ready AI and custom software.',
+      'Vektas helps mid-market and enterprise organizations remove process bottlenecks, connect disconnected operations, reduce repetitive work, and deliver dependable business improvements.',
   },
   '/services': {
-    title: 'Services | Vektas',
+    title: 'How We Help | Vektas',
     description:
-      'AI systems engineering, workflow modernization, systems integration, custom software, enterprise knowledge systems, and production readiness services.',
+      'Improve slow, costly, fragmented operations without beginning with a technology project. Start with the business problem and the result your organization needs.',
   },
   '/solutions': {
-    title: 'Solutions | Vektas',
+    title: 'Business Problems We Solve | Vektas',
     description:
-      'Practical AI, automation, integration, document intelligence, and knowledge systems for complex mid-market and enterprise operations.',
+      'Vektas helps solve slow processes, broken handoffs, scattered knowledge, repetitive work, disconnected systems, fragile internal tools, and stalled improvement initiatives.',
   },
   '/pricing': {
-    title: 'Engagement Models | Vektas',
+    title: 'How We Work | Vektas',
     description:
-      'Flexible consulting and delivery models for assessment, pilot, production implementation, optimization, and ongoing support.',
+      'Start with a focused problem assessment, prove the improvement, and invest further when measurable evidence supports it.',
   },
   '/blog': {
-    title: 'Blog | Vektas',
+    title: 'Business Operations Insights | Vektas',
     description:
-      'Insights on production AI, automation, enterprise integration, private AI, RAG, cost control, and practical software engineering.',
+      'Practical guidance for reducing delays, controlling costs, improving knowledge access, preserving oversight, and delivering dependable operational change.',
   },
   '/about': {
-    title: 'About | Vektas',
+    title: 'About Vektas | Practical Operational Improvement',
     description:
-      'Learn how Vektas combines enterprise software engineering, systems integration, business analysis, and AI to solve complex operational problems.',
+      'Vektas helps leadership and operational teams turn complicated business problems into practical plans and dependable results.',
   },
   '/contact': {
-    title: 'Contact | Vektas',
+    title: 'Start a Conversation | Vektas',
     description:
-      'Contact Vektas to discuss an AI, automation, systems integration, or custom software initiative for your organization.',
+      'Tell Vektas what is taking too long, costing too much, relying on workarounds, or preventing an important initiative from moving forward.',
   },
 }
 
@@ -68,10 +70,20 @@ function useTheme() {
 function useSeoMetadata() {
   const location = useLocation()
 
-  const meta = useMemo(
-    () => routeMeta[location.pathname] ?? routeMeta['/'],
-    [location.pathname],
-  )
+  const meta = useMemo(() => {
+    if (location.pathname.startsWith('/blog/')) {
+      const slug = location.pathname.replace('/blog/', '')
+      const post = blogPosts.find((candidate) => candidate.slug === slug)
+      if (post) {
+        return {
+          title: `${post.title} | Vektas`,
+          description: post.description,
+        }
+      }
+    }
+
+    return routeMeta[location.pathname] ?? routeMeta['/']
+  }, [location.pathname])
 
   useEffect(() => {
     document.title = meta.title
@@ -119,6 +131,7 @@ function AppRoutes() {
       <Route path="/solutions" element={<SolutionsPage />} />
       <Route path="/pricing" element={<PricingPage />} />
       <Route path="/blog" element={<BlogPage />} />
+      <Route path="/blog/:slug" element={<BlogArticlePage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="*" element={<Navigate to="/" replace />} />
