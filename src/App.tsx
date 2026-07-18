@@ -13,39 +13,39 @@ import { SolutionsPage } from './pages/SolutionsPage'
 
 const routeMeta: Record<string, { title: string; description: string }> = {
   '/': {
-    title: 'Vektas | Better Operations, Measurable Results',
+    title: 'Vektas | Make Complex Work Easier, Faster & More Reliable',
     description:
-      'Vektas helps mid-market and enterprise organizations reduce operational friction, improve consistency, control costs, and turn stalled initiatives into measurable results.',
+      'Vektas helps mid-market and enterprise organizations remove process bottlenecks, connect disconnected operations, reduce repetitive work, and deliver dependable business improvements.',
   },
   '/services': {
-    title: 'Services | Vektas',
+    title: 'How We Help | Vektas',
     description:
-      'Practical support for improving complex workflows, reducing delays, connecting teams, strengthening controls, and delivering reliable operational change.',
+      'Improve slow, costly, fragmented operations without beginning with a technology project. Start with the business problem and the result your organization needs.',
   },
   '/solutions': {
-    title: 'Solutions | Vektas',
+    title: 'Business Problems We Solve | Vektas',
     description:
-      'Solutions for slow processes, scattered knowledge, repetitive work, broken handoffs, inconsistent decisions, and difficult operational change.',
+      'Vektas helps solve slow processes, broken handoffs, scattered knowledge, repetitive work, disconnected systems, fragile internal tools, and stalled improvement initiatives.',
   },
   '/pricing': {
-    title: 'Engagement Models | Vektas',
+    title: 'How We Work | Vektas',
     description:
-      'Flexible engagement models for assessment, focused improvement initiatives, implementation, optimization, and ongoing operational support.',
+      'Start with a focused problem assessment, prove the improvement, and invest further when measurable evidence supports it.',
   },
   '/blog': {
     title: 'Business Operations Insights | Vektas',
     description:
-      'Practical guidance for reducing delays, controlling costs, protecting information, improving access to knowledge, and delivering dependable operational change.',
+      'Practical guidance for reducing delays, controlling costs, improving knowledge access, preserving oversight, and delivering dependable operational change.',
   },
   '/about': {
-    title: 'About | Vektas',
+    title: 'About Vektas | Practical Operational Improvement',
     description:
-      'Learn how Vektas helps organizations untangle complex operations, improve business processes, and turn difficult initiatives into practical results.',
+      'Vektas helps leadership and operational teams turn complicated business problems into practical plans and dependable results.',
   },
   '/contact': {
-    title: 'Contact | Vektas',
+    title: 'Start a Conversation | Vektas',
     description:
-      'Contact Vektas to discuss an operational problem, stalled initiative, costly process, or improvement opportunity within your organization.',
+      'Tell Vektas what is taking too long, costing too much, relying on workarounds, or preventing an important initiative from moving forward.',
   },
 }
 
