@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { Layout } from './components/Layout'
-import { getBlogPost } from './data/blogPosts'
+import { blogPosts } from './data/blogPosts'
 import { AboutPage } from './pages/AboutPage'
 import { BlogArticlePage } from './pages/BlogArticlePage'
 import { BlogPage } from './pages/BlogPage'
@@ -35,7 +35,7 @@ const routeMeta: Record<string, { title: string; description: string }> = {
   '/blog': {
     title: 'Blog | Vektas',
     description:
-      'Insights on production AI, automation, enterprise integration, private AI, RAG, cost control, and practical software engineering.',
+      'Practical guidance for reducing operational friction, protecting sensitive information, controlling costs, and improving access to organizational knowledge.',
   },
   '/about': {
     title: 'About | Vektas',
@@ -72,7 +72,8 @@ function useSeoMetadata() {
 
   const meta = useMemo(() => {
     if (location.pathname.startsWith('/blog/')) {
-      const post = getBlogPost(location.pathname.replace('/blog/', ''))
+      const slug = location.pathname.replace('/blog/', '')
+      const post = blogPosts.find((candidate) => candidate.slug === slug)
       if (post) {
         return {
           title: `${post.title} | Vektas`,
