@@ -20,7 +20,7 @@ export function BlogArticlePage() {
   return (
     <article className="mx-auto max-w-3xl px-4 py-16 sm:px-6">
       <Link className="text-sm font-semibold text-blue-600 hover:text-blue-700" to="/blog">
-        ← Back to the blog
+        ← Back to insights
       </Link>
 
       <header className="mt-8 border-b border-slate-200 pb-8 dark:border-slate-800">
@@ -74,15 +74,15 @@ export function BlogArticlePage() {
       </div>
 
       <aside className="mt-12 rounded-2xl bg-slate-100 p-8 dark:bg-slate-900">
-        <h2 className="text-xl font-semibold text-slate-900 dark:text-white">Improve a process that is costing time or money</h2>
+        <h2 className="text-xl font-semibold text-slate-900 dark:text-white">Recognize this problem in your organization?</h2>
         <p className="mt-3 text-slate-600 dark:text-slate-300">
-          Vektas helps mid-market and enterprise organizations reduce operational friction, improve consistency, and turn stalled initiatives into measurable results.
+          Tell Vektas what is happening, who it affects, and what you would like to improve. You do not need to arrive with a technical solution.
         </p>
         <Link
           className="mt-5 inline-flex rounded-lg bg-blue-600 px-5 py-3 text-sm font-semibold text-white hover:bg-blue-700"
           to="/contact"
         >
-          Discuss the business problem
+          Talk Through the Problem
         </Link>
       </aside>
     </article>
