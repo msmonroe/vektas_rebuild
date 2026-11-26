@@ -10,5 +10,12 @@
       "/api/*"
     ]
   },
-  "main": "worker/index.js"
+  "main": "worker/index.js",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "vektas-leads",
+      "database_id": "03fa85cb-0544-4aba-8f4b-707ca0295ac0"
+    }
+  ]
 }
