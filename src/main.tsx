@@ -10,7 +10,7 @@ const app = (
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )
 if (root.hasChildNodes()) hydrateRoot(root, app)
 else createRoot(root).render(app)
