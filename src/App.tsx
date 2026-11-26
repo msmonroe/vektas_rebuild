@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { Layout } from './components/Layout'
-import { blogPosts } from './data/blogPosts'
+import { getMetadata } from './seo'
 import { AboutPage } from './pages/AboutPage'
 import { BlogArticlePage } from './pages/BlogArticlePage'
 import { BlogPage } from './pages/BlogPage'
@@ -11,58 +11,21 @@ import { PricingPage } from './pages/PricingPage'
 import { ServicesPage } from './pages/ServicesPage'
 import { SolutionsPage } from './pages/SolutionsPage'
 
-const routeMeta: Record<string, { title: string; description: string }> = {
-  '/': {
-    title: 'Vektas | Make Complex Work Easier, Faster & More Reliable',
-    description:
-      'Vektas helps mid-market and enterprise organizations remove process bottlenecks, connect disconnected operations, reduce repetitive work, and deliver dependable business improvements.',
-  },
-  '/services': {
-    title: 'How We Help | Vektas',
-    description:
-      'Improve slow, costly, fragmented operations without beginning with a technology project. Start with the business problem and the result your organization needs.',
-  },
-  '/solutions': {
-    title: 'Business Problems We Solve | Vektas',
-    description:
-      'Vektas helps solve slow processes, broken handoffs, scattered knowledge, repetitive work, disconnected systems, fragile internal tools, and stalled improvement initiatives.',
-  },
-  '/pricing': {
-    title: 'How We Work | Vektas',
-    description:
-      'Start with a focused problem assessment, prove the improvement, and invest further when measurable evidence supports it.',
-  },
-  '/blog': {
-    title: 'Business Operations Insights | Vektas',
-    description:
-      'Practical guidance for reducing delays, controlling costs, improving knowledge access, preserving oversight, and delivering dependable operational change.',
-  },
-  '/about': {
-    title: 'About Vektas | Practical Operational Improvement',
-    description:
-      'Vektas helps leadership and operational teams turn complicated business problems into practical plans and dependable results.',
-  },
-  '/contact': {
-    title: 'Start a Conversation | Vektas',
-    description:
-      'Tell Vektas what is taking too long, costing too much, relying on workarounds, or preventing an important initiative from moving forward.',
-  },
-}
 
 function useTheme() {
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light')
+  const [ready, setReady] = useState(false)
+  useEffect(() => {
     const stored = localStorage.getItem('vektas-theme')
-    if (stored === 'light' || stored === 'dark') {
-      return stored
-    }
-
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-  })
+    setTheme(stored === 'light' || stored === 'dark' ? stored : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+    setReady(true)
+  }, [])
 
   useEffect(() => {
+    if (!ready) return
     document.documentElement.classList.toggle('dark', theme === 'dark')
     localStorage.setItem('vektas-theme', theme)
-  }, [theme])
+  }, [theme, ready])
 
   return { theme, toggleTheme: () => setTheme((value) => (value === 'dark' ? 'light' : 'dark')) }
 }
@@ -70,23 +33,18 @@ function useTheme() {
 function useSeoMetadata() {
   const location = useLocation()
 
-  const meta = useMemo(() => {
-    if (location.pathname.startsWith('/blog/')) {
-      const slug = location.pathname.replace('/blog/', '')
-      const post = blogPosts.find((candidate) => candidate.slug === slug)
-      if (post) {
-        return {
-          title: `${post.title} | Vektas`,
-          description: post.description,
-        }
-      }
-    }
-
-    return routeMeta[location.pathname] ?? routeMeta['/']
-  }, [location.pathname])
+  const meta = useMemo(() => getMetadata(location.pathname), [location.pathname])
 
   useEffect(() => {
     document.title = meta.title
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]')
+    if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical) }
+    canonical.href = meta.canonical
+    let schema = document.querySelector<HTMLScriptElement>('script[data-vektas-schema]')
+    if (!schema) { schema = document.createElement('script'); schema.type = 'application/ld+json'; schema.dataset.vektasSchema = ''; document.head.appendChild(schema) }
+    schema.textContent = JSON.stringify(meta.schema)
+    const ogUrl = document.querySelector<HTMLMetaElement>('meta[property="og:url"]')
+    if (ogUrl) ogUrl.content = meta.canonical
 
     const ensureMetaTag = (selector: string, attributes: Record<string, string>) => {
       let element = document.head.querySelector(selector) as HTMLMetaElement | null
