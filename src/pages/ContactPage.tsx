@@ -20,7 +20,7 @@ export function ContactPage() {
         >
           {[
             { id: 'name', label: 'Your name', type: 'text' },
-            { id: 'company', label: 'Organization', type: 'text' },
+            { id: 'company', label: 'Organization, optional', type: 'text' },
             { id: 'email', label: 'Work email', type: 'email' },
             { id: 'phone', label: 'Phone, optional', type: 'tel' },
           ].map((field) => (
@@ -32,7 +32,7 @@ export function ContactPage() {
                 id={field.id}
                 name={field.id}
                 type={field.type}
-                required={field.id !== 'phone'}
+                required={field.id !== 'phone' && field.id !== 'company'}
                 className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 outline-none ring-blue-600 focus:ring-2 dark:border-slate-700 dark:bg-slate-950 dark:text-white"
               />
             </div>
