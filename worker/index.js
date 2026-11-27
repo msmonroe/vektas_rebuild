@@ -30,7 +30,16 @@ export default {
     if (request.method !== 'POST') return json(405, { error: 'Method not allowed' })
     if (request.headers.get('Origin') !== url.origin || !['https://vektas.com','https://www.vektas.com'].includes(url.origin)) return json(403, { error: 'Invalid origin' })
     if (!request.headers.get('Content-Type')?.startsWith('application/json')) return json(415, { error: 'Expected JSON' })
-    if (!env.DB || !env.TURNSTILE_SECRET) return json(503, { error: 'Form temporarily unavailable. Please email sales@vektas.com.' })
+    if (!env.DB || !env.TURNSTILE_SECRET || !env.FORM_LIMIT) {
+      console.error('Form configuration incomplete', { database: Boolean(env.DB), turnstile: Boolean(env.TURNSTILE_SECRET), rateLimit: Boolean(env.FORM_LIMIT) })
+      return json(503, { error: 'Form temporarily unavailable. Please email sales@vektas.com.' })
+    }
+    const ip = request.headers.get('CF-Connecting-IP')
+    if (!ip) return json(503, { error: 'Form temporarily unavailable.' })
+    try {
+      const { success } = await env.FORM_LIMIT.limit({ key: ip })
+      if (!success) return json(429, { error: 'Too many requests. Please try again in a minute.' })
+    } catch { return json(503, { error: 'Form temporarily unavailable.' }) }
     let body, data
     try {
       body = await readBody(request)
@@ -40,7 +49,7 @@ export default {
       const token = field(body, 'token', 2048)
       data = { email, token }
       if (url.pathname === '/api/contact') Object.assign(data, {
-        name: field(body, 'name', 120), company: field(body, 'company', 160),
+        name: field(body, 'name', 120), company: field(body, 'company', 160, false),
         phone: field(body, 'phone', 40, false), problem: field(body, 'problem', 120),
         message: field(body, 'message', 5000)
       })
