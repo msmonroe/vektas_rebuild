@@ -35,7 +35,7 @@ export function useLeadForm(kind: 'contact' | 'newsletter') {
     loadTurnstile().then(api => {
       if (!active || !widget.current) return
       instance.current = { api, id: api.render(widget.current, {
-        sitekey: key, action: kind,
+        sitekey: key, action: kind, size: 'flexible',
         callback: (value: string) => setToken(value),
         'expired-callback': () => setToken(''),
         'error-callback': () => { setToken(''); setStatus('Security check unavailable. Please retry or email sales@vektas.com.') }
