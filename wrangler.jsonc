@@ -17,5 +17,16 @@
       "database_name": "vektas-leads",
       "database_id": "03fa85cb-0544-4aba-8f4b-707ca0295ac0"
     }
+  ],
+  "keep_vars": true,
+  "ratelimits": [
+    {
+      "name": "FORM_LIMIT",
+      "namespace_id": "1001",
+      "simple": {
+        "limit": 5,
+        "period": 60
+      }
+    }
   ]
 }
