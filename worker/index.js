@@ -31,6 +31,12 @@ export default {
     if (request.headers.get('Origin') !== url.origin || !['https://vektas.com','https://www.vektas.com'].includes(url.origin)) return json(403, { error: 'Invalid origin' })
     if (!request.headers.get('Content-Type')?.startsWith('application/json')) return json(415, { error: 'Expected JSON' })
     if (!env.DB || !env.TURNSTILE_SECRET) return json(503, { error: 'Form temporarily unavailable. Please email sales@vektas.com.' })
+    const ip = request.headers.get('CF-Connecting-IP')
+    if (!ip || !env.FORM_LIMIT) return json(503, { error: 'Form temporarily unavailable.' })
+    try {
+      const { success } = await env.FORM_LIMIT.limit({ key: ip })
+      if (!success) return json(429, { error: 'Too many requests. Please try again in a minute.' })
+    } catch { return json(503, { error: 'Form temporarily unavailable.' }) }
     let body, data
     try {
       body = await readBody(request)
